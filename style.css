@@ -55,10 +55,14 @@ color:#666666;
    width: 120px; 
 }
 
-<<<<<<< HEAD
-=======
+#pub
+{
+	/*float:right;
+	width: 120px; */
+}
+
 #contenu
 {
 	text-align: center;
 }
->>>>>>> d764cd60f67cc46dcd1f7a1f967b5525d2221e39
+
