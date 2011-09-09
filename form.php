@@ -2,8 +2,10 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script type="text/javascript" src="http://dev.jquery.com/view/trunk/plugins/validate/jquery.validate.js"></script>
     <link rel="stylesheet" media="screen" type="text/css" title="Design" href="style.css" />
+
+    <script type="text/javascript" src="scripts/jquery.validate.min.js"></script>
+
   </head>
   <body>
   <div class="cadredumenugauche">
