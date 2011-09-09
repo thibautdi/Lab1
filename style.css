@@ -20,8 +20,8 @@ body
 
 #menu
 {
-   float: left; /* Le menu flottera à gauche */
-   width: 120px; /* Très important : donner une taille au menu */
+   float: left; 
+   width: 120px; 
 }
 
 #contenu
