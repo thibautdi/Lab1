@@ -3,8 +3,14 @@ body
 	background-image:url(img/background_image.jpg);
 	text-align: justify;
 
+
+	   width: 1024px;
+	   margin: auto;
+	   margin-top: 20px;
+	   margin-bottom: 20px;   	
 } 
-.cadredumenugauche {
+.cadredumenugauche
+ {
 
 margin-top:10px;
 
@@ -38,7 +44,7 @@ color:#666666;
 {
    width: 760px;
    height: 100px;
-   background-image: url("images/banniere.png");
+   background-image: url("img/banniere.png");
    background-repeat: no-repeat;
    margin-bottom: 10px;
 }
@@ -49,3 +55,10 @@ color:#666666;
    width: 120px; /* Très important : donner une taille au menu */
 }
 
+<<<<<<< HEAD
+=======
+#contenu
+{
+	text-align: center;
+}
+>>>>>>> d764cd60f67cc46dcd1f7a1f967b5525d2221e39
