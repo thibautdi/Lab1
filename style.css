@@ -3,7 +3,7 @@ body
 	background-image:url(img/background_image.jpg);
 	text-align: justify;
 
-	   width: 760px;
+	   width: 1024px;
 	   margin: auto;
 	   margin-top: 20px;
 	   margin-bottom: 20px;   	
@@ -13,7 +13,7 @@ body
 {
    width: 760px;
    height: 100px;
-   background-image: url("images/banniere.png");
+   background-image: url("img/banniere.png");
    background-repeat: no-repeat;
    margin-bottom: 10px;
 }
@@ -22,4 +22,9 @@ body
 {
    float: left; /* Le menu flottera à gauche */
    width: 120px; /* Très important : donner une taille au menu */
+}
+
+#contenu
+{
+	text-align: center;
 }
