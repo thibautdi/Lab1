@@ -29,6 +29,8 @@
       </option>
       <?php endfor;?>
     </select>
+    <input type='radio' name='sexe' value='h'/>Homme
+    <input type='radio' name='sexe' value='f'>Femme
     </form>
   </body>
 </html>
