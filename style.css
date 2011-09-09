@@ -3,3 +3,33 @@ body
 	background-image:url(img/background_image.jpg);
 	text-align: justify;
 } 
+.cadredumenugauche {
+
+margin-top:10px;
+
+float:left;
+
+text-align:left;
+
+margin-left:10px;
+
+margin-right:10px;
+
+height:472px;
+
+/*padding:10px;*/
+
+width:150px;
+
+
+
+background-color:#EEEEEE;
+
+border:1px solid #000000; /* cadre menu */
+
+color:#666666;
+
+    
+
+}
+
