@@ -3,11 +3,42 @@ body
 	background-image:url(img/background_image.jpg);
 	text-align: justify;
 
+
 	   width: 1024px;
 	   margin: auto;
 	   margin-top: 20px;
 	   margin-bottom: 20px;   	
 } 
+.cadredumenugauche
+ {
+
+margin-top:10px;
+
+float:left;
+
+text-align:left;
+
+margin-left:10px;
+
+margin-right:10px;
+
+height:472px;
+
+/*padding:10px;*/
+
+width:150px;
+
+
+
+background-color:#EEEEEE;
+
+border:1px solid #000000; /* cadre menu */
+
+color:#666666;
+
+    
+
+}
 
 #header
 {
@@ -24,7 +55,10 @@ body
    width: 120px; 
 }
 
+<<<<<<< HEAD
+=======
 #contenu
 {
 	text-align: center;
 }
+>>>>>>> d764cd60f67cc46dcd1f7a1f967b5525d2221e39
