@@ -66,3 +66,27 @@ color:#666666;
 	text-align: center;
 }
 
+#inscriptionForm {
+  width :700px;
+}
+
+#inscriptionForm input {
+  margin-left:140px;
+  line-height:16px;
+}
+#inscriptionForm select {
+  margin-left:140px;
+}
+
+#inscriptionForm #mois, #inscriptionForm #annee {
+  margin-left:0;
+}
+#inscriptionForm label {
+  line-height:30px;
+  position:absolute;
+  text-align:left;
+  width:130px;
+}
+#inscriptionForm  {
+  height:30px;
+}
