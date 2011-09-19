@@ -1,55 +1,12 @@
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    
-    <link rel="stylesheet" media="screen" type="text/css" title="Design" href="style.css" />
-    <script type="text/javascript" src="scripts/jquery.validate.min.js"></script>
-
-  </head>
+<?php include("header.php") ?>
   <body>
-  <div class="cadredumenugauche">
-    <div class="menu">
-	<ul  name="coordonnees" id="coordonnees">
-		<li id="Li1"  class="menu">Collaborateur<br/>
-		<span  class="collaborateur" id="collaborateur"></span><br/>
-		</li>
-
-		<li class="menu">Date<br/>
-		
-		<select   id="date" tabindex="10">
-           
-       	   </select><br/>
-		</li>
-	
-
-
-		<li class="menu">Urgence<br />
-		<select  name="urgence" id="urgence" tabindex="30">
-          </select><br/>
-		</li>
-
-		<li class="menu">Durée<br />
-		<select  name="duree" id="duree" tabindex="40">
-           
-       	   </select><br/>
-		</li>
-        <li class="menu">Environnement<br />
-		<select class="listbox1"  name="environnement" id="environnement" 
-                tabindex="45" size="5">
-           
-       	   </select>
-		</li>
-
-	</ul>
-	
-	</div>
-
-   </div>
     <script>
       $(document).ready(function(){
         $("#inscriptionForm").validate();
       });
       </script>
+      <?php include 'menu.php'; ?>
+    	
     <h1>Formulaire d'inscription</h1>
     <form id='inscriptionForm' action='success.php' method='post'>
     <div>
