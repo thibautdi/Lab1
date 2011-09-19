@@ -49,7 +49,7 @@ body
 }
 
 #inscriptionForm {
-  width :700px;
+  width :1000px;
 }
 
 #inscriptionForm input {
@@ -68,6 +68,10 @@ body
   position:absolute;
   text-align:left;
   width:130px;
+}
+
+#inscriptionForm label.error {
+  width:auto;
 }
 #inscriptionForm  {
   height:30px;
