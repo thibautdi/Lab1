@@ -12,6 +12,8 @@
 	</div>
 
 	<div id="connection">
-	  <p> Login : </p>
-	  <p> Password : </p>
+	  <label for='login'>Login</label>
+	  <input type='text' name='login' id='login'/>
+  	<label for='login'>Mot de passe</label>
+  	<input type='password' name='pwd' id='pwd'/>
 	</div>
