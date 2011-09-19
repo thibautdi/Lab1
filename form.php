@@ -66,6 +66,7 @@
     </div>
     <div>
     <input type='submit'/>
+    <input type='button' value='Vider formulaire'>
     </div>
     </form>
   </body>
