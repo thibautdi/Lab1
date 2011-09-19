@@ -7,46 +7,17 @@ body
 	   width: 1024px;
 	   margin: auto;
 	   margin-top: 20px;
-	   margin-bottom: 20px;   	
+	   margin-bottom: 20px;
 } 
-.cadredumenugauche
- {
-
-margin-top:10px;
-
-float:left;
-
-text-align:left;
-
-margin-left:10px;
-
-margin-right:10px;
-
-height:472px;
-
-/*padding:10px;*/
-
-width:150px;
-
-
-
-background-color:#EEEEEE;
-
-border:1px solid #000000; /* cadre menu */
-
-color:#666666;
-
-    
-
-}
 
 #header
 {
-   width: 760px;
+   width: 800px;
    height: 100px;
    background-image: url("img/banniere.png");
    background-repeat: no-repeat;
    margin-bottom: 10px;
+   text-align : center;   	
 }
 
 #menu
@@ -55,10 +26,21 @@ color:#666666;
    width: 120px; 
 }
 
+
+#connection
+{
+   position : absolute;
+   width: 100px; 
+   height: 100px;
+   top: 1em;
+   right: 1em;
+}
+
+
 #pub
 {
-	/*float:right;
-	width: 120px; */
+	float:right;
+	width: 120px;
 }
 
 #contenu
