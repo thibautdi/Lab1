@@ -1,9 +1,8 @@
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    
     <link rel="stylesheet" media="screen" type="text/css" title="Design" href="style.css" />
-
     <script type="text/javascript" src="scripts/jquery.validate.min.js"></script>
 
   </head>
@@ -83,7 +82,7 @@
     </select>
     <select id='annee' name='annee'>
       <?php for ($i = 1900; $i < 2011; $i++):?>
-      <option value='<?php echo $i;?>'>
+      <option value='<?php echo $i;?>'  <?php if ( $i == 1989 ) echo 'SELECTED';?>>
         <?php echo $i; ?>
       </option>
       <?php endfor;?>
