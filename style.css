@@ -5,25 +5,34 @@ p
 
 body 
 {
-	background-image:url(img/background_image.jpg);
 	text-align: justify;
-
-
-	   width: 1024px;
-	   margin: auto;
-	   margin-top: 20px;
-	   margin-bottom: 20px;
+	width: 100%;
+	min-width: 981px;
+	margin: auto;
+	margin-bottom: 20px;
 } 
 
 #header
 {
-   float:left;
-   width: 800px;
-   height: 100px;
-   background-image: url("img/banniere.png");
-   background-repeat: no-repeat;
+   height: 60px;
    margin-bottom: 10px;
-   text-align : center;   	
+   background: #3B5998;
+   color:#ffffff;
+   overflow: auto;
+}
+
+#logo 
+{
+ text-align:left;
+ font-size: 40px;
+ margin-left:10px;
+ line-height:60px;
+ font-family:cursive,Times;
+}
+
+#header input 
+{
+  line-height:20px;
 }
 
 #menu
@@ -31,21 +40,17 @@ body
   font-family:"Tahoma","Times New Roman", Times, serif;
    float: left; 
    width: 230px; 
-   border-style:solid;
-   border-width:3px;
-   padding-left : 16px;
+   padding-left: 5px;
 }
 
 
 #connection
 {
    float :right;
-   width: 100px; 
-   height: 100px;
+   width: 400px; 
    top: 1em;
    right: 2em;
-   border-style:solid;
-   border-width:3px;
+   line-height: 60px;
 }
 
 
@@ -86,6 +91,16 @@ body
 #inscriptionForm label.error {
   width:auto;
 }
-#inscriptionForm  {
-  height:30px;
+
+#inscriptionDiv
+{
+  border-left:1px solid #B3B3B3;
+  margin-left:150px;
+  padding-left:30px;
+}
+
+ul 
+{
+  list-style:none;
+  padding-left:0px;
 }

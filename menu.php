@@ -1,4 +1,5 @@
 <div id="menu">
+  <ul>
     <li><a href="">Accueil</a></li>
     <li><a href="">Catégorie 1</a>
       <ul>
@@ -32,4 +33,5 @@
       </ul>
     </li>
     <li><a href="">Catégorie 4</a></li>
+  </ul>
  </div>

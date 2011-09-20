@@ -6,7 +6,7 @@
       });
       </script>
       <?php include 'menu.php'; ?>
-    	
+    <div id='inscriptionDiv'>
     <h1>Formulaire d'inscription</h1>
     <form id='inscriptionForm' action='success.php' method='post'>
     <div>
@@ -67,6 +67,7 @@
     <div>
     <input type='submit'/>
     <input type='button' value='Vider formulaire'>
+    </div>
     </div>
     </form>
   </body>
