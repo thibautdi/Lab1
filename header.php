@@ -8,12 +8,16 @@
   </head>
   <body>
 	  <div id="header">
-      <span id='logo'>∑ Perruche = Perruches </span>
+      <a href='index.php'><span id='logo'>∑ Perruche = Perruches </span></a>
 	    <div id="connection">
-	      <label for='login'>Login</label>
-	      <input type='text' name='login' id='login'/>
-  	    <label for='login'>Mot de passe</label>
-  	    <input type='password' name='pwd' id='pwd'/>
+	      <form action='' method='post'>
+  	      <input type='text' name='login' id='login' placeholder='Login'/>
+    	    <input type='password' name='pwd' id='pwd' placeholder='Mot de passe'/>
+    	    <input type='submit' id='submit' value='Se connecter'>
+    	    <div id='creerCompte'>
+    	      <a href='form.php'>Créer un compte</a>
+    	    </div>
+    	  </form>
 	    </div>
 	  </div>
 	  <div id='main'>
