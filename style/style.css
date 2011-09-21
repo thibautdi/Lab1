@@ -14,11 +14,21 @@ body
 
 #header
 {
-   height: 60px;
-   margin-bottom: 10px;
-   background: #3B5998;
-   color:#ffffff;
-   overflow: auto;
+  height: 60px;
+  margin-bottom: 10px;
+  background: #3B5998;
+  color:#ffffff;
+  overflow: auto;
+}
+
+#main {
+  min-height:600px;
+}
+
+#footer {
+  text-align: center;
+  text-decoration: italic;
+  font-size:9px;
 }
 
 #logo 
@@ -33,41 +43,46 @@ body
 #header input 
 {
   line-height:20px;
+  width:90px;
 }
 
 #menu
 {
   font-family:"Tahoma","Times New Roman", Times, serif;
-   float: left; 
-   width: 230px; 
-   padding-left: 5px;
+  float: left; 
+  width: 15%; 
+  padding-left: 5px;
 }
 
+#pub 
+{
+  padding-left:30px;
+}
 
 #connection
 {
-   float :right;
-   width: 400px; 
-   top: 1em;
-   right: 2em;
-   line-height: 60px;
-}
-
-
-#pub
-{
-	float:right;
-	width: 120px;
+  float :right;
+  width: 400px; 
+  top: 1em;
+  right: 2em;
+  line-height: 60px;
 }
 
 #contenu
 {
-  clear:both;
-	text-align: center;
+	text-align: left;
+	width:60%;
+	float:left;
+	border-left:1px solid #B3B3B3;
+  border-right:1px solid #B3B3B3;
+  padding-right:30px;
+  padding-left:30px;
+  min-height:600px;
+  text-indent: justify;
 }
 
 #inscriptionForm {
-  width :1000px;
+  width:500px;
 }
 
 #inscriptionForm input {
@@ -92,15 +107,14 @@ body
   width:auto;
 }
 
-#inscriptionDiv
-{
-  border-left:1px solid #B3B3B3;
-  margin-left:150px;
-  padding-left:30px;
-}
-
 ul 
 {
   list-style:none;
   padding-left:0px;
+}
+
+#droite {
+  float:right;
+  clear:right;
+  width:19%;
 }
