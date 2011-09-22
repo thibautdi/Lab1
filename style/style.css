@@ -11,6 +11,7 @@ body
 	min-width: 981px;
 	margin: auto;
 	margin-bottom: 20px;
+	background-image: url(../img/background_image.jpg);
 } 
 
 #header
@@ -20,10 +21,8 @@ body
   width: 1024px;
   height: 60px;
   margin-bottom: 10px;
-  background: #3B5998;
-  color:#ffffff;
-  overflow: auto;
   min-width:700px;
+  background-image: url(../img/banniere.png);
 }
 
 #main {
@@ -69,6 +68,21 @@ body
   padding-left: 5px;
 }
 
+#menu a:visited {
+text-decoration: none;
+color:#FFFFFF;
+}
+
+#menu a:hover {
+text-decoration: none;
+color:#FFFFFF;
+}
+
+#menu a:active {
+text-decoration: none;
+color:#FFFFFF;
+}
+
 #pub 
 {
   padding-left:30px;
@@ -87,6 +101,7 @@ body
 {
   font-size: small;
   font-family:"Tahoma","Times New Roman", Times, serif;
+  background-color: #FFFFFF;
 	width:550px;
 	float:left;
 	border-left:1px solid #B3B3B3;

@@ -10,7 +10,7 @@
   </head>
   <body>
 	  <div id="header">
-      <a href='index.php'><span id='logo'>∑ Perruche = Perruches</span></a>
+      <a href='index.php'><span id='logo'>Note une boite.com</span></a>
 	    <div id="connection">
 	      <form action='' method='post'>
   	      <input type='text' name='login' id='login' placeholder="Nom d'usager"/>
