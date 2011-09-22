@@ -47,27 +47,28 @@
           </select>
           </div>
           <div>
-          <label for="sexe">Homme</label>
-          <input type='radio' id='sexeh' name='sexe' value='h' class='required'/>
+            <label for="sexe">Homme</label>
+            <input type='radio' id='sexeh' name='sexe' value='h' class='required'/>
           </div>
           <div>
-          <label for="sexe">Femme</label>
-          <input type='radio' id='sexef' name='sexe' value='f' class='required'>
+            <label for="sexe">Femme</label>
+            <input type='radio' id='sexef' name='sexe' value='f' class='required'>
           </div>
           <div>
-          <label for="login">Login</label>
-          <input type='texte' id='login' name='login'/>
+            <label for="login">Login</label>
+            <input type='texte' id='login' name='login' class='required'/>
           </div>
           <div>
-          <label for="pwd">Mot de passe</label>
-          <input type='password' id='pwd'name='pwd' class='required'/>
+            <label for="pwd">Mot de passe</label>
+            <input type='password' id='pwd'name='pwd' class='required'/>
           </div>
           <div>
-          <input type='checkbox' id='condition' name='condition' class='required check'> J'accepte les conditions de ce site
+            <label for="condition"></label>
+            <input type='checkbox' id='condition' name='condition' class='required check'> J'accepte les conditions de ce site
           </div>
           <div>
-          <input type='submit'/>
-          <input type='button' value='Vider formulaire'>
+            <input type='submit' value='Envoyer'/>
+            <input id='viderForm' type='button' value='Vider formulaire'>
           </div>
         </div>
       </form>

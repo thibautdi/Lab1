@@ -14,14 +14,20 @@ body
 
 #header
 {
+  margin: 0 auto;
+  vertical-align:center;
+  width: 1024px;
   height: 60px;
   margin-bottom: 10px;
   background: #3B5998;
   color:#ffffff;
   overflow: auto;
+  min-width:700px;
 }
 
 #main {
+  margin:0 auto;
+  width:1024px;
   min-height:600px;
 }
 
@@ -58,7 +64,7 @@ body
 {
   font-family:"Tahoma","Times New Roman", Times, serif;
   float: left; 
-  width: 15%; 
+  width: 200px; 
   padding-left: 5px;
 }
 
@@ -70,7 +76,7 @@ body
 #connection
 {
   float :right;
-  width: 600px; 
+  width: 300px; 
   top: 1em;
   right: 2em;
   line-height: 60px;
@@ -78,8 +84,7 @@ body
 
 #contenu
 {
-	text-align: left;
-	width:60%;
+	width:550px;
 	float:left;
 	border-left:1px solid #B3B3B3;
   border-right:1px solid #B3B3B3;
@@ -125,7 +130,7 @@ ul
 {
   float:right;
   clear:right;
-  width:19%;
+  width:180px;
 }
 
 input[type="submit"]
@@ -156,4 +161,26 @@ input[type="submit"]
 #creerCompte a 
 {
   color:#98A9CA;
+}
+
+#inscriptionForm #viderForm
+{
+  margin-left:5px;
+}
+
+#inscriptionForm input[type="submit"]
+{
+  margin-top:20px;
+}
+
+#inscriptionForm label.error
+{
+  font-size:9px;
+  color:red;  
+  margin-left:10px;
+}
+
+#inscriptionForm label[for='condition'].error
+{
+  margin-top:8px;
 }
