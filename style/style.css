@@ -223,7 +223,7 @@ input[type="submit"]
   margin-left:150px;
 }
 
-#inscriptionForm input[for='sexe']
+#inscriptionForm #lsexeh
 {
   width:auto;
 }
