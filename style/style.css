@@ -197,6 +197,10 @@ input[type="submit"]
   margin-left:5px;
 }
 
+#inscriptionForm div {
+ margin-bottom:12px; 
+}
+
 #inscriptionForm input[type="submit"]
 {
   margin-top:20px;
@@ -212,4 +216,14 @@ input[type="submit"]
 #inscriptionForm label[for='condition'].error
 {
   margin-top:8px;
+}
+
+#inscriptionForm label[for='sexe'].error
+{
+  margin-left:150px;
+}
+
+#inscriptionForm input[for='sexe']
+{
+  width:auto;
 }
