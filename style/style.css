@@ -1,6 +1,7 @@
 p
 {
   font-family:"Tahoma","Times New Roman", Times, serif;
+  font-size: small;
 }
 
 body 
@@ -84,6 +85,8 @@ body
 
 #contenu
 {
+  font-size: small;
+  font-family:"Tahoma","Times New Roman", Times, serif;
 	width:550px;
 	float:left;
 	border-left:1px solid #B3B3B3;
@@ -109,6 +112,32 @@ body
 #inscriptionForm #mois, #inscriptionForm #annee {
   margin-left:0;
 }
+
+#inscriptionForm #sexe {
+  line-height:30px;
+  margin-top: 10px;
+  margin-left:0;
+  margin-bottom: 10px;
+}
+
+#inscriptionForm #sexeh {
+  margin-right: 50px;
+  margin-left: 90px;
+}
+
+#lsexeh {
+  margin-left: 111px;
+}
+
+#lsexef {
+  margin-left: 63px;
+}
+
+#inscriptionForm #sexef {
+  margin-right: 50px;
+  margin-left: 41px;
+}
+
 #inscriptionForm label {
   line-height:30px;
   position:absolute;
@@ -155,7 +184,7 @@ input[type="submit"]
   line-height: 10px;
   margin-top: -13px;
   font-size: 11px;
-  margin-left: 100px;
+  margin-left: 103px;
 }
 
 #creerCompte a 

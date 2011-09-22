@@ -46,14 +46,15 @@
             <?php endfor;?>
           </select>
           </div>
-          <div>
-            <label for="sexe">Homme</label>
-            <input type='radio' id='sexeh' name='sexe' value='h' class='required'/>
+          
+          <div id='sexe'>
+              Je suis : 
+              <label for="sexe" id="lsexeh">Un homme</label>
+              <input type='radio' id='sexeh' name='sexe' value='h' class='required'/>
+              <label for="sexe" id="lsexef">Une femme</label>
+              <input type='radio' id='sexef' name='sexe' value='f' class='required'>
           </div>
-          <div>
-            <label for="sexe">Femme</label>
-            <input type='radio' id='sexef' name='sexe' value='f' class='required'>
-          </div>
+          
           <div>
             <label for="login">Login</label>
             <input type='texte' id='login' name='login' class='required'/>
