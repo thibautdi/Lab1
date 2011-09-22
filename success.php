@@ -1,3 +1,5 @@
+<!-- Page affichée lorsque l'inscription de l'utilisateur a fonctionnée -->
+
 <html>
   <head>
   </head>

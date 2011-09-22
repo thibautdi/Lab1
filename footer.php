@@ -1,3 +1,4 @@
+<!-- /*fichier de footer, comportant les crédits et informations*/ -->
 
 </div>
 <div id='footer'>
