@@ -16,11 +16,13 @@
   	      <input type='text' name='login' id='login' placeholder="Nom d'usager"/>
     	    <input type='password' name='pwd' id='pwd' placeholder='Mot de passe'/>
     	    <input type='submit' id='submit' value='Se connecter'>
-    	    <div id='creerCompte'>
-    	      <a href='form.php'>Créer un compte</a>
-    	    </div>
-    	  </form>
+    	   </form> 
+      </div>    	    
+    	    
+    	<div id='creerCompte'>
+    	    <a href='form.php'>Créer un compte</a> 
 	    </div>
+	    
 	  </div>
 	  <div id='main'>
 	
