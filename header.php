@@ -36,12 +36,10 @@ elseif (isset($_SESSION['user'])) {
   	      <input type='text' name='login' id='login' placeholder="Nom d'usager"/>
     	    <input type='password' name='pwd' id='pwd' placeholder='Mot de passe'/>
     	    <input type='submit' id='submit' value='Se connecter'>
-    	   </form> 
-      </div>    	    
-    	    
+    	   </form>     	    
     	<div id='creerCompte'>
     	    <a href='form.php'>Créer un compte</a> 
 	    </div>
-	    
 	  </div>
-	  <div id='main'>
+	</div>
+	<div id='main'>
