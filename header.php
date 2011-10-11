@@ -7,30 +7,21 @@
     <script type="text/javascript" src="scripts/jquery-1.6.4.min.js"></script>
     <script type="text/javascript" src="scripts/jquery.validate.min.js"></script>
     <script type="text/javascript" src="scripts/form.js"></script>
-    <script type="text/javascript" src="scripts/ie.js"></script>
- 
   </head>
-
   <body>
 	  <div id="header">
-      <a href='index.php'><span id='logo'>Changer cette police</span></a>
+      <a href='index.php'><span id='logo'>Note une boite.com</span></a>
 	    <div id="connection">
 	      <form action='' method='post'>
   	      <input type='text' name='login' id='login' placeholder="Nom d'usager"/>
     	    <input type='password' name='pwd' id='pwd' placeholder='Mot de passe'/>
-    	    
-    	    
-          
     	    <input type='submit' id='submit' value='Se connecter'>
     	   </form> 
-    	   
-    	   <div id='creerCompte'>
-       	    <a href='form.php'>Créer un compte</a> 
-   	    </div>
-   	    
       </div>    	    
     	    
-
+    	<div id='creerCompte'>
+    	    <a href='form.php'>Créer un compte</a> 
+	    </div>
 	    
 	  </div>
 	  <div id='main'>
