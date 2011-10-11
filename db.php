@@ -16,6 +16,7 @@ class Db {
   
   public function connect() {
     self::$link = mysql_connect(self::$db['host'],self::$db['user'],self::$db['pwd']) or die('Could not connect: ' . mysql_error());
+    mysql_query("SET NAMES UTF8"); 
   }
   
   private function disconnect() {
