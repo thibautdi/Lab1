@@ -1,5 +1,4 @@
-<!-- fichier de la page principale, comprends toutes les inclusions vers les élements du site ainsi que le texte d'accueil' -->
-
+<?php session_start(); ?>
 <?php include 'header.php'; ?>
 <?php include 'menu.php'; ?>
 <div id="contenu">

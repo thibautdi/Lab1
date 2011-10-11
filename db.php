@@ -46,3 +46,4 @@ class Db {
     return $user;
   }
 }
+?>

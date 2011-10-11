@@ -6,3 +6,4 @@ $config = array(
   'user' => 'root',
   'pwd' => 'root'
 );
+?>
