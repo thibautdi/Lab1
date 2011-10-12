@@ -33,7 +33,7 @@ if (isset($_POST['login'])) {
 	    <div id="connection">
 	      <form action='index.php' method='post'>
   	      <input type='text' name='login' id='login' placeholder="Nom d'usager"/>
-    	    <input type='password' name='pwd' id='pwd' placeholder='Mot de passe'/>
+    	    <input type='password' name='pwd' id='pwd' placeholder='Password'/>      
     	    <input type='submit' id='submit' value='Se connecter'>
     	   </form>     	    
     	<div id='creerCompte'>
