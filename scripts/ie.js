@@ -21,8 +21,7 @@ $(function() {
       $(active).focus();
       $('form:eq(0)').submit(function () {
          $(':text.hasPlaceholder').val('');
-      });
-      
+      });      
       
       $(':password').focus(function () {
          if ($(this).attr('placeholder') != '' && $(this).val() == $(this).attr('placeholder')) {
@@ -38,7 +37,5 @@ $(function() {
       $('form:eq(0)').submit(function () {
          $(':password.hasPlaceholder').val('');
       });
-      
-      
-   }
+}
 });
