@@ -24,6 +24,7 @@ if (isset($_POST['login'])) {
     <script type="text/javascript" src="scripts/jquery-1.6.4.min.js"></script>
     <script type="text/javascript" src="scripts/jquery.validate.min.js"></script>
     <script type="text/javascript" src="scripts/form.js"></script>
+    <script type="text/javascript" src="scripts/ie.js"></script>
   </head>
   <body>
 	  <div id="header">
