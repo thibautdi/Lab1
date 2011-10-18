@@ -6,7 +6,7 @@
       <form id='inscriptionForm' enctype='multipart/form-data' action='club_added.php' method='post'>
         <div>
           <label for="nom">Nom du club</label>
-          <input type='text' id='nom' name='nom' class='required'/>
+          <input type='text' id='name' name='name' class='required'/>
         </div>
         <div>
           <label for="nom">Adresse</label>
@@ -22,7 +22,7 @@
         </div>
         <div>
           <label for="public">Âge Moyen</label>
-          <input type='texte'/>
+          <input type='texte' id='age' name='age'/>
         </div>
         <div>
           <input type='submit' value='Envoyer'/>
