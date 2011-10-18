@@ -1,10 +1,11 @@
 <?php session_start(); ?>
 <?
 include 'config.php';
-include 'Db.php';   
+include 'Db.php'; 
+$db = new Db($config);
+  
 if (isset($_POST['login'])) {
    $_SESSION['bla'] = 'bla';
-   $db = new Db($config);
    $user = $db->select_user('login',$_POST['login']);
 
    if ($user['pwd'] == $_POST['pwd']) {
@@ -20,13 +21,25 @@ if (isset($_POST['login'])) {
   <head>
     <title>Lab 1, Boivin-Diehl</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" type="text/css" href="style/style.css" />
+    <link rel="stylesheet" type="text/css" href="style/default.css" />
+    <?php if (isset($_COOKIE['style'])): ?>
+    <link rel="stylesheet" type="text/css" href="style/<?php echo $_COOKIE['style'];?>.css" />
+    <?php endif;?>
     <script type="text/javascript" src="scripts/jquery-1.6.4.min.js"></script>
     <script type="text/javascript" src="scripts/jquery.validate.min.js"></script>
     <script type="text/javascript" src="scripts/form.js"></script>
     <script type="text/javascript" src="scripts/ie.js"></script>
   </head>
   <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=175779149170885";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    
 	  <div id="header">
       <a href='index.php'><span id='logo'>Note une boite.com</span></a>
 	    <div id="connection">
