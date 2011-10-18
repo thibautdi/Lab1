@@ -11,8 +11,19 @@ $club = $db->get_club('id',$_GET['club_id']);
         <div id='club_logo'>
           <img src="<?php echo $club['logo']?>"/>
         </div>
+        <?php if ($club['website'] != ''): ?>
+        <div id='club_website'>
+          <div class='club_title'>Website:</div>
+          <p><a href="<?php echo $club['website']?>"><?php echo $club['website'];?></a></p>
+        </div>
+        <?php endif;?>
         <div id='club_address'>
-          <?php echo $club['address'];?>
+          <div class='club_title'>Adresse:</div>
+          <p><?php echo $club['address'];?></p>
+        </div>
+        <div id='club_age'>
+          <div class='club_title'>Age Moyen:</div>
+          <p><?php echo $club['age'];?></p>
         </div>
       </div>
       <div id='club_comments'>
