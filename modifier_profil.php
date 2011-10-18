@@ -6,19 +6,29 @@
       <h2 onClick="show_div('changePwdDiv');">Changer mon mot de passe</h1>
       <div id='changePwdDiv'>
         <form id='pwdForm' action='modif_success.php' method='post'>
+          <div>
           <label for 'old_pwd'>
           Ancien mot de passe
           </label>
           <input type='password' name='old_pwd'/>
+          </div>
+          
+          <div>
           <label for='new_pwd'>
           Nouveau mot de passe
           </label>
           <input type='password' name='new_pwd'/>
+           </div>
+           
+          <div>
           <label for='conf_pwd'>
           Confirmer nouveau mot de passe
           </label>
           <input type='password' name='conf_pwd'/>
+          </div>
+          
           <input type='submit' value='Valider'>
+           
         </form>
       </div>
       <h2 onClick="show_div('changeStyleDiv');">Changer le style du site</h1>

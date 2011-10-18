@@ -237,6 +237,21 @@ input[type="submit"]
   display:none;
 }
 
+#changePwdDiv label {
+  line-height: 30px;
+  position: absolute;
+  text-align: left;
+  width: 220px;
+  margin-bottom: 12px;
+}
+
+#changePwdDiv input{
+  line-height: 16px;
+  margin-left: 240px;
+  margin-bottom: 12px;
+  
+}
+
 .club_name {
   float:left;
   font-size:20px;
