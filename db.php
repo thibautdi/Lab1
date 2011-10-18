@@ -58,6 +58,21 @@ class Db {
     return $club;
   }
   
+  public function get_all_clubs() {
+    self::connect();
+    mysql_select_db(self::$db['db']);
+    $query = "SELECT * FROM clubs";
+    $result = mysql_query($query);
+    if (!$result) {
+       echo 'Impossible d\'exécuter la requête : ' . mysql_error();
+       exit;
+    }
+    while ($club = mysql_fetch_array($result)) {
+      $clubs[] = $club;
+    }
+    return $clubs;
+  }
+  
   public function select_user($by,$value) {
     $by = self::avoid_injection($by);
     $value = self::avoid_injection($value);
