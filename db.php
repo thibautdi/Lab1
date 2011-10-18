@@ -33,10 +33,32 @@ class Db {
     self::disconnect();
   }
   
+  public function insert_club($club) {
+    self::connect();
+    extract($club);
+    mysql_query("SET NAMES UTF8"); 
+    mysql_select_db(self::$db['db']);
+    mysql_query("INSERT INTO clubs (name,address,logo) VALUES ('$nom','$addresse','$logo')");
+    self::disconnect();
+  }
+  
+  public function get_club($by, $value) {
+    self::connect();
+    mysql_select_db(self::$db['db']);
+    $query = "SELECT * FROM clubs WHERE ${by}='$value'";
+    $result = mysql_query($query);
+    if (!$result) {
+       echo 'Impossible d\'exécuter la requête : ' . mysql_error();
+       exit;
+    }
+    $club = mysql_fetch_array($result);
+    return $club;
+  }
+  
   public function select_user($by,$value) {
     self::connect();
     mysql_select_db(self::$db['db']);
-    $query = "SELECT * FROM users WHERE login='$value'";
+    $query = "SELECT * FROM users WHERE ${by}='$value'";
     $result = mysql_query($query);
     if (!$result) {
        echo 'Impossible d\'exécuter la requête : ' . mysql_error();
