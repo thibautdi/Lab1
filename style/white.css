@@ -1,0 +1,12 @@
+body {
+  background-color:white;
+  color:black;
+}
+
+#header {
+  background-image: url(../img/random_grey_variations.png);
+}
+
+#connection {
+ color:white; 
+}
