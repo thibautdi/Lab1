@@ -16,6 +16,7 @@
         Chercher un club en particulier
       </a>
     </li>
+  </ul>
 </div>
 <?php include 'sidebar.php';?>
 <?php include 'footer.php';?>

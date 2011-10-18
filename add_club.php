@@ -14,7 +14,7 @@
         </div>
         <div>
           <label for="logo">Logo</label>
-          <input type='file' id='logo' name='logo' class='required'>
+          <input type='file' id='file_logo' name='logo' class='required'>
         </div>
         <div>
           <label for="website">Site web</label>
