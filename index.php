@@ -2,7 +2,20 @@
 <?php include 'header.php'; ?>
 <?php include 'menu.php'; ?>
 <div id="contenu">
-  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  <h1>Bienvenue !</h1>
+  <p> Ce site est destiné à vous permettre de vous renseigner sur les clubs de Montréal en vous permettant de noter chaque club selon de nombreux critères</p>
+  <p> Vous pouvez dès maintenant:</p>
+  <ul>
+    <li>
+      <a>
+        Consulter la liste des clubs répertoriés
+      </a>
+    </li>
+    <li>
+      <a>
+        Chercher un club en particulier
+      </a>
+    </li>
 </div>
 <?php include 'sidebar.php';?>
 <?php include 'footer.php';?>
