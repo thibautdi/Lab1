@@ -44,17 +44,20 @@ if (isset($_POST['login'])) {
       <a href='index.php'><span id='logo'>Note une boite.com</span></a>
 	    <div id="connection">
 	    <?php if (!isset($_SESSION['user'])){ ?>
-	    <div id="connection">
-	      <form action='index.php' method='post'>
-  	      <input type='text' name='login' id='login' placeholder="Nom d'usager"/>
-    	    <input type='password' name='pwd' id='pwd' placeholder='Password'/>      
-    	    <input type='submit' id='submit' value='Se connecter'>
-    	   </form>     	    
-    	<div id='creerCompte'>
-    	    <a href='form.php'>Créer un compte</a> 
-	    </div>
+
+  	    <div id="connection">
+  	      <form action='index.php' method='post'>
+    	      <input type='text' name='login' id='login' placeholder="Nom d'usager"/>
+      	    <input type='password' name='pwd' id='pwd' placeholder='Password'/>      
+      	    <input type='submit' id='submit' value='Se connecter'>
+      	   </form>     	    
+      	<div id='creerCompte'>
+      	    <a href='form.php'>Créer un compte</a> 
+  	    </div>
+  	    </div>  	    
+  	    
 	  <?php } else { 
-	    echo "Yo ".$_SESSION['user']['fname']." ".$_SESSION['user']['lname'];
+	    echo "Bonjour ".$_SESSION['user']['fname']." ".$_SESSION['user']['lname'];
 	    ?>
 	    <a href='logout.php'>Logout</a>
 	    <?php } ?>

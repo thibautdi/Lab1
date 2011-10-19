@@ -2,8 +2,11 @@
 <?php include 'menu.php'; ?>
   <div id='contenu'>
     <h1>Modifier mon profil</h1>
+    <p>Cliquez sur une catégorie ci dessous pour effectuer une modification</p>
+    </br>
+    </br>
     <?php if (isset($_SESSION['user'])){ ?>
-      <h2 onClick="show_div('changePwdDiv');">Changer mon mot de passe</h1>
+      <h3 onClick="show_div('changePwdDiv');">Changer mon mot de passe</h3>
       <div id='changePwdDiv'>
         <form id='pwdForm' action='modif_success.php' method='post'>
           <div>
@@ -31,7 +34,8 @@
            
         </form>
       </div>
-      <h2 onClick="show_div('changeStyleDiv');">Changer le style du site</h1>
+      </br>
+      <h3 onClick="show_div('changeStyleDiv');">Changer le style du site</h3>
       <div id='changeStyleDiv'>
         <form id='styleForm' action='modif_success.php' method='post'>
           <label for='style_select'>
