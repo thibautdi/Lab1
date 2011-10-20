@@ -6,7 +6,7 @@
 
       $temp_image = 'club_images/temp.'.$ext;
       move_uploaded_file($_FILES['logo']['tmp_name'],$temp_image);
-      $link = 'club_images/'.$_POST['nom'].".".$ext;
+      $link = 'club_images/'.$_POST['name'].".".$ext;
       rename($temp_image,$link);
 
       $club = array(
