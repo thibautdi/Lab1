@@ -23,7 +23,6 @@ body
   height: 60px;
   margin-bottom: 10px;
   min-width:700px;
-  background-image: url(../img/banniere.png);
 }
 
 #main {
@@ -43,7 +42,7 @@ body
 {
  text-align:left;
  font-size: 40px;
- margin-left:100px;
+ margin-left:5px;
  line-height:60px;
  font-family:cursive,Times;
  color:white;
@@ -71,6 +70,7 @@ body
   padding-left:15px;
   min-height:600px;
   text-indent: justify;
+  opacity: 0.85;
 }
 
 #menu ul li a, #menu a:active, #menu ul li a:visited, #menu a:hover  {
@@ -103,6 +103,7 @@ text-decoration: none;
   padding-left:30px;
   min-height:600px;
   text-indent: justify;
+  opacity: 0.95;
 }
 
 #inscriptionForm {
@@ -168,6 +169,7 @@ ul
   float:right;
   clear:right;
   width:-1px;
+  opacity: 0.8;
 }
 
 input[type="submit"]
@@ -197,7 +199,7 @@ input[type="submit"]
 
 #creerCompte a 
 {
-  color:black;
+  color:white;
 }
 
 #inscriptionForm #viderForm
