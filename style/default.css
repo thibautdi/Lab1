@@ -13,6 +13,8 @@ body
 	margin-bottom: 20px;
   font-family: "lucida grande",tahoma,verdana;
   background-image: url(../img/back.jpg);
+  background-repeat:no-repeat;
+  background-attachment:fixed;
 } 
 
 #header
@@ -28,7 +30,7 @@ body
 #main {
   margin:0 auto;
   width:1024px;
-  min-height:600px;
+  min-height:700px;
 }
 
 #footer {
@@ -68,7 +70,7 @@ body
   background-color: #FFFFFF;
   margin-right:56px;
   padding-left:15px;
-  min-height:600px;
+  min-height:700px;
   text-indent: justify;
   opacity: 0.85;
 }
@@ -101,7 +103,7 @@ text-decoration: none;
   border-right:1px solid #B3B3B3;
   padding-right:30px;
   padding-left:30px;
-  min-height:600px;
+  min-height:700px;
   text-indent: justify;
   opacity: 0.95;
 }

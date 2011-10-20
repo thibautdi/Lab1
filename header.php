@@ -56,11 +56,11 @@ if (isset($_POST['login'])) {
   	    </div>
   	    </div>  	    
   	    
-	  <?php } else { 
+	  <?php } else { ?> <span style="color: white"> <?php
 	    echo "Bonjour ".$_SESSION['user']['fname']." ".$_SESSION['user']['lname'];
 	    ?>
 	    <a href='logout.php'>Logout</a>
-	    <?php } ?>
+	    <?php ?> </span> <?php } ?>
 	  </div>
 	</div>
 	<div id='main'>

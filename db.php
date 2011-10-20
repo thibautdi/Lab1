@@ -43,6 +43,18 @@ class Db {
     self::disconnect();
   }
   
+  public function remove_club($id) {
+    $id = self::avoid_injection($id);
+    self::connect();
+    mysql_query("SET NAMES UTF8"); 
+    mysql_select_db(self::$db['db']);
+    $result = mysql_query("DELETE FROM clubs WHERE id = '$id'");
+    if (!$result) {
+       echo 'Impossible d\'exécuter la requête : ' . mysql_error();
+       exit;
+    }
+  }
+  
   public function get_club($by, $value) {
     $by = self::avoid_injection($by);
     $value = self::avoid_injection($value);

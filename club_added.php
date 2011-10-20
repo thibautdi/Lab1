@@ -29,8 +29,7 @@
           $db->insert_club($club);
           echo "Votre club a été soumis pour validation. Merci.";
         } 
- 
-      
+     
 ?>
   </br>
   <a href='add_club.php'>Ajouter un autre club</a>
