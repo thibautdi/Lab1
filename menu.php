@@ -12,7 +12,7 @@
   } 
   
   if ($_SESSION['user']['admin'] == '1') { ?>  
-    <li><a href="">Gérer les utilisateurs</a></li>
+    <li><a href="validate_club.php">Valider les lieux</a></li>
 
     <?php   
   } 

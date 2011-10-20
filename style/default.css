@@ -65,10 +65,10 @@ body
 #menu
 {
   float: left; 
-  width: 150px; 
+  width: 170px; 
   background-color: #FFFFFF;
   margin-right:56px;
-  padding-left:30px;
+  padding-left:15px;
   min-height:600px;
   text-indent: justify;
 }

@@ -39,7 +39,7 @@ class Db {
     extract($club);
     mysql_query("SET NAMES UTF8"); 
     mysql_select_db(self::$db['db']);
-    mysql_query("INSERT INTO clubs (name,address,logo,age,website) VALUES ('$name','$address','$logo','$age','$website')");
+    mysql_query("INSERT INTO clubs (name,address,logo,age,website,reviewed) VALUES ('$name','$address','$logo','$age','$website','$reviewed')");
     self::disconnect();
   }
   
