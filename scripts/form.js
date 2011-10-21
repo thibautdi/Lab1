@@ -57,7 +57,6 @@ jQuery(document).ready(function(){
          var filled = i + 1;
 
          if (eval(left) <= dif  && dif <= eval(right)) {         
-           $('#test').html(filled);
            $('#hidden_rating').val(filled);
            $('#rating_form').submit();
          }
