@@ -22,6 +22,7 @@ if (isset($_POST['login'])) {
     <title>Lab 1, Boivin-Diehl</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="style/default.css" />
+    <link rel="stylesheet" type="text/css" href="style/rating.css" />
     <?php if (isset($_COOKIE['style'])): ?>
     <link rel="stylesheet" type="text/css" href="style/<?php echo $_COOKIE['style'];?>.css" />
     <?php endif;?>

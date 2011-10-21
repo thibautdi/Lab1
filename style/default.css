@@ -319,8 +319,6 @@ input[type="submit"]
   width:200px;
 }
 
-.fb-comments {
-  width:500px;
-  margin-left:auto;
-  margin-right:auto;
+#club_comments {
+  padding-left:25px;
 }

@@ -30,7 +30,6 @@ class Db {
     mysql_select_db(self::$db['db']);
     echo $bday;
     mysql_query("INSERT INTO users (fname,lname,email,login,pwd,sexe,bday,admin) VALUES ('$fname','$lname','$email','$login','$pwd','$sexe','$bday','$admin')");
-    self::disconnect();
   }
   
   public function insert_club($club) {
@@ -40,7 +39,6 @@ class Db {
     mysql_query("SET NAMES UTF8"); 
     mysql_select_db(self::$db['db']);
     mysql_query("INSERT INTO clubs (name,address,logo,age,website,reviewed) VALUES ('$name','$address','$logo','$age','$website','$reviewed')");
-    self::disconnect();
   }
   
   public function remove_club($id) {
@@ -66,7 +64,7 @@ class Db {
        echo 'Impossible d\'exécuter la requête : ' . mysql_error();
        exit;
     }
-    $club = mysql_fetch_array($result);
+    $club = mysql_fetch_array($result);    
     return $club;
   }
   
@@ -81,7 +79,7 @@ class Db {
     }
     while ($club = mysql_fetch_array($result)) {
       $clubs[] = $club;
-    }
+    }    
     return $clubs;
   }
   
@@ -96,7 +94,8 @@ class Db {
        echo 'Impossible d\'exécuter la requête : ' . mysql_error();
        exit;
     }
-    $user = mysql_fetch_array($result);
+    $user = mysql_fetch_array($result);    
+    
     return $user;
   }
   
@@ -109,5 +108,50 @@ class Db {
       return $res;
   }
   
+  public function rate_club($club_id, $rating,$user_id,$sexe) {
+    $club_id = self::avoid_injection($club_id);
+    $rating = self::avoid_injection($rating);
+    $user_id = self::avoid_injection($user_id);
+    $sexe = self::avoid_injection($sexe);
+    
+    self::connect();
+    mysql_select_db(self::$db['db']);
+    $query ="INSERT INTO ratings(user_id,club_id,rating,sexe) VALUES ('$user_id','$club_id','$rating','$sexe')";
+    $result = mysql_query($query);
+    if (!$result) {
+       echo 'Impossible d\'exécuter la requête : ' . mysql_error();
+       exit;
+    }
+    
+    $query = "SELECT rating,nb_ratings FROM clubs WHERE id='$club_id'";
+    $result = mysql_query($query);
+    
+    $stat = mysql_fetch_array($result);
+    
+    $rating = (($stat['rating'] * $stat['nb_ratings']) + $rating) / ($stat['nb_ratings'] + 1);
+    echo $rating;
+    $nb = $stat['nb_ratings'] + 1;
+    $update = "UPDATE clubs SET rating='$rating', nb_ratings='$nb' WHERE id='$club_id'";
+    $result = mysql_query($update);
+    if (!$result) {
+       echo 'Impossible d\'exécuter la requête : ' . mysql_error();
+       exit;
+    }
+  }
+  
+  public function is_rated($club_id,$user_id) {
+    $club_id = self::avoid_injection($club_id);
+    $user_id = self::avoid_injection($user_id);
+    
+    self::connect();
+    mysql_select_db(self::$db['db']);
+    $select = "SELECT rating FROM ratings WHERE club_id='$club_id' AND user_id='$user_id'";
+    $result = mysql_query($select);
+    if (!$result) {
+       echo 'Impossible d\'exécuter la requête : ' . mysql_error();
+       exit;
+    }
+    return mysql_fetch_array($result);
+  } 
 }
 ?>

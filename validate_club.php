@@ -6,7 +6,7 @@
      <?php
       $clubs = $db->get_all_clubs();
       foreach ($clubs as $club) {
-        if ($club["reviewed"] = 0) {
+        if ($club["reviewed"] == 0) {
         ?>
         <a href="info_club.php?club_id=<?php echo $club['id']; ?>"><img src="<?php echo $club['logo']; ?>"/></a>
         
