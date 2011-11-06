@@ -12,7 +12,7 @@
   
   <ul>
     <li>
-      <a href="mailto:contact@adopteuneboite.com?subject=Demande d'informationss">Par email
+      <a href="mailto:contact@adopteuneboite.com?subject=Demande d'informations">Par email
       </a>
     </li>
     <li>
