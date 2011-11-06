@@ -65,18 +65,18 @@ $club_rated = $db->is_rated($_GET['club_id'],$_SESSION['user']['id']);
       <div id='club_comments'>
         <div class="fb-comments" data-href="localhost/lab1/info_club.php?club_id=<?php echo $club['id'];?>" data-num-posts="5" data-width="500"></div>
       </div>
-    </div>
-    
-    <?php if ($_SESSION['user']['admin'] == '1') { ?>
-      </div>
-      <div id='delete_club'>
-        <form id='styleForm' action='delete_club.php' method='post'>
-        <input type='hidden' value= "<?php echo $_GET['club_id']; ?>" name='club_to_delete'>
-          <input type='submit' value='Supprimer'>
-        </form>
-      </div>
       
-    <?php } ?>
+        <?php if ($_SESSION['user']['admin'] == '1') { ?>
+          <div id='delete_club'>
+            <form id='styleForm' action='delete_club.php' method='post'>
+            <input type='hidden' value= "<?php echo $_GET['club_id']; ?>" name='club_to_delete'>
+              <input type='submit' value='Supprimer'>
+            </form>
+          </div>   
+        <?php } ?>
+    </div>
   </div>
+
+  
 <?php include 'sidebar.php'; ?>
 <?php include 'footer.php'; ?>

@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <?
 include 'config.php';
-include 'Db.php'; 
+include 'db.php'; 
 $db = new Db($config);
   
 if (isset($_POST['login'])) {
@@ -19,7 +19,7 @@ if (isset($_POST['login'])) {
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
   <head>
-    <title>Lab 1, Boivin-Diehl</title>
+    <title>Note une boite</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="style/default.css" />
     <link rel="stylesheet" type="text/css" href="style/rating.css" />

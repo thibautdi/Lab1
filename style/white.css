@@ -1,12 +1,20 @@
 body {
   background-color:white;
-  color:black;
+  background-image:none;
 }
 
 #header {
-  background-image: url(../img/random_grey_variations.png);
+  background-color:white; 
 }
 
 #connection {
  color:white; 
+}
+
+#logo {
+ color:black;
+}
+
+#footer {
+  color:black;
 }

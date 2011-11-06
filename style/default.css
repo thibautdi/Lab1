@@ -28,6 +28,11 @@ body
   min-width:700px;
 }
 
+#delete_club
+{
+  
+}
+
 #main {
   margin:0 auto;
   width:1024px;
@@ -50,7 +55,6 @@ body
  font-family:cursive,Times;
  color:white;
  text-decoration:none;
- 
 }
 
 #header input 
