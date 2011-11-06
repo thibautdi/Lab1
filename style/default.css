@@ -1,3 +1,4 @@
+
 p
 {
   font-family: "lucida grande",tahoma,verdana;
@@ -321,4 +322,20 @@ input[type="submit"]
 
 #club_comments {
   padding-left:25px;
+}
+
+.small .clip img {
+  width: 109px;
+  top: -12px;
+  position: relative;
+  display: block;
+  float:left;
+}
+
+#ytPage {
+  display:none;
+}
+
+#club_videos {
+  margin-bottom:25px;
 }

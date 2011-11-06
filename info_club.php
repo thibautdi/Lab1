@@ -38,7 +38,12 @@ $club_rated = $db->is_rated($_GET['club_id'],$_SESSION['user']['id']);
             <div class="stars filled_<?php echo $club['rating'];?>"></div>
           </div>
         </div>
-      <div id='test'></div> 
+      <div class='club_title' id='club_videos'>Videos</div>
+        <script src="http://www.yvoschaap.com/ytpage/ytembed.js" type="text/javascript"></script>
+        <div id="ytThumbs"></div>
+          <script type="text/javascript">
+        	  ytEmbed.init({'block':'ytThumbs','q':"<?php echo $club['name'];?> club montreal",'type':'search','results':5,'order':'most_relevance','player':'embed','layout':'thumbnails','width':'550'});
+        </script>
       <form action="info_club.php?club_id=<?php echo $club['id'];?>" id='rating_form' method='POST'>
         <input type='hidden' id='hidden_rating' name='hidden_rating' value="<?php echo $club['rating'];?>"/>       
        <?php if ($club_rated) {
