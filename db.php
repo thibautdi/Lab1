@@ -28,7 +28,6 @@ class Db {
     extract($user);
     mysql_query("SET NAMES UTF8"); 
     mysql_select_db(self::$db['db']);
-    echo $bday;
     mysql_query("INSERT INTO users (fname,lname,email,login,pwd,sexe,bday,admin) VALUES ('$fname','$lname','$email','$login','$pwd','$sexe','$bday','$admin')");
   }
   
