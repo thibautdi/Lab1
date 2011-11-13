@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<?
+<?php
 include 'config.php';
 include 'db.php'; 
 $db = new Db($config);
