@@ -1,5 +1,3 @@
-<!-- //fichier du menu, regroupe tous les liens du site -->
-
 <div id="menu">
    <ul>
       <li><a href="index.php">Accueil</a></li>

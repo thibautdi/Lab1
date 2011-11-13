@@ -6,6 +6,7 @@ $db = new Db($config);
   
 if (isset($_POST['login'])) {
    $_SESSION['bla'] = 'bla';
+
    $user = $db->select_user('login',$_POST['login']);
 
    if ($user['pwd'] == $_POST['pwd']) {
@@ -28,6 +29,7 @@ if (isset($_POST['login'])) {
     <?php endif;?>
     <script type="text/javascript" src="scripts/jquery-1.6.4.min.js"></script>
     <script type="text/javascript" src="scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="scripts/messages_fr.js"></script>
     <script type="text/javascript" src="scripts/form.js"></script>
     <script type="text/javascript" src="scripts/ie.js"></script>
   </head>
