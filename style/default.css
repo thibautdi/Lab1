@@ -224,6 +224,9 @@ input[type="submit"]
   font-size:9px;
   color:red;  
   margin-left:10px;
+  float:left;
+  width:270px;
+  display:inline-block;
 }
 
 #inscriptionForm label[for='condition'].error
@@ -338,4 +341,10 @@ input[type="submit"]
 
 #club_videos {
   margin-bottom:25px;
+}
+
+#validateUsername {
+  font-size:9px;
+  font-decoration:italic;
+  line-height:16px;
 }
