@@ -32,6 +32,7 @@ if (isset($_POST['login'])) {
     <script type="text/javascript" src="scripts/messages_fr.js"></script>
     <script type="text/javascript" src="scripts/form.js"></script>
     <script type="text/javascript" src="scripts/ie.js"></script>
+    <script type="text/javascript" src="scripts/location.js"></script>
   </head>
   <body>
     <div id="fb-root"></div>
