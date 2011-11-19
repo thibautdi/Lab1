@@ -28,7 +28,7 @@ body
   min-width:700px;
 }
 
-#delete_club
+#manage_club
 {
   
 }
@@ -368,9 +368,11 @@ top:0px;
 left:0px;
 width:100%;
 }
+
 #popUpDiv {
 position:absolute;
 background-color:#eeeeee;
 width:300px;
 height:300px;
 z-index: 9002;
+}
