@@ -5,9 +5,8 @@ function viderform() {
 function show_div(div) {
   $("#"+div).toggle();
 }
-
 $(document).ready(function(){
-   
+      
     function check_fname () {
 	    return $('#fname').val.match("[^A-Za-z0-9]");
 	  }
@@ -38,12 +37,8 @@ $(document).ready(function(){
 	      check_name: true,
 	      minlength:2
 	    },
-	    login: {
+	    username: {
 	      required: true,
-	      remote: {
-		 	    url: "check_login.php",
-	      	type: "post" 
-			  },
 		    minlength:5
 		  },
 		  pwd :{
@@ -58,23 +53,32 @@ $(document).ready(function(){
 		}
 	}  
 	});
-	var validateUsername = $("label[for='login'].error");
 
 	$('#username').keyup(function(){
 	    var t = this; 
+	    $('label.success').remove();
 	if (this.value != '') {    
 		if (this.value != this.lastValue) {
+		      var validateUsername = $("label[for='username'].error");
 		      if (this.timer) clearTimeout(this.timer);
+		      if (validateUsername.length == 0) {
+		        $("#username").after("<label class='error' generated='true' for='username'></label>");
+		        validateUsername = $("label[for='username'].error");
+		      }
 		      validateUsername.html('<img src="img/ajax-loader.gif" height="16" width="16" /> checking availability...');
 
 		      this.timer = setTimeout(function () {
 		        $.ajax({
 		          url: 'check_login.php',
-		          data: 'login=' + t.value,
+		          data: 'username=' + t.value,
 		          dataType: 'json',
 		          type: 'post',
 		          success: function (j) {
 		            validateUsername.html(j.msg);
+		            if (j.ok == 'true') {
+		              $("label[for='username'].error").remove();
+		              $("#username").after("<label class='success' for='username'>"+j.msg+"</label>");
+		            }
 		          }
 		        });
 		      }, 200);

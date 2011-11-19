@@ -29,7 +29,6 @@ class Db {
     extract($user);
     mysql_query("SET NAMES UTF8"); 
     mysql_select_db(self::$db['db']);
-    echo $bday;
     mysql_query("INSERT INTO users (fname,lname,email,login,pwd,sexe,bday,admin) VALUES ('$fname','$lname','$email','$login','$pwd','$sexe','$bday','$admin')");
   }
   
@@ -112,11 +111,11 @@ class Db {
   }
   
   public function avoid_injection($res) {
+      $purifier = new HTMLPurifier(); 
       if(is_array($res))
           foreach($res as $k => $v)
               $res[$k] = self::avoid_injection($v); //recursive
       elseif(is_string($res))
-          $purifier = new HTMLPurifier(); 
           $res = mysql_real_escape_string($purifier->purify($res));
       return $res;
   }
@@ -179,7 +178,7 @@ class Db {
      }
      elseif (ereg("[^A-Za-z0-9]", $login)) {
        $response = array(
-         "msg" => "<img src='img/no.png'/>Votre login ne doit contenir que des lettres et chiffres",
+         "msg" => "<label class='error' for='login'><img src='img/no.png'/>Votre login ne doit contenir que des lettres et chiffres</label>",
          "ok" => "false"
        );
      }

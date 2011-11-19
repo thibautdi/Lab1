@@ -336,6 +336,11 @@ label.error_pwd {
   padding-left:25px;
 }
 
+label.success {
+ font-size:9px;
+ color:green; 
+}
+
 .small .clip img {
   width: 109px;
   top: -12px;
@@ -368,9 +373,11 @@ top:0px;
 left:0px;
 width:100%;
 }
+
 #popUpDiv {
 position:absolute;
 background-color:#eeeeee;
 width:300px;
 height:300px;
 z-index: 9002;
+}

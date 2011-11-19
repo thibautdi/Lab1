@@ -50,10 +50,9 @@
         </div>
         
         <div>
-          <label for="login">Login</label>
-          <input type='texte' id='username' name='login' class='required'/>
-          <label for="login" class='error' generated='true'></label>
-          <input type='hidden' id='login_status' value='false'/>
+          <label for="username">Login</label>
+          <input type='texte' id='username' name='username' class='required'/>
+          <input type='hidden' id='username_status' value='false'/>
         </div>
         <div>
           <label for="pwd">Mot de passe</label>

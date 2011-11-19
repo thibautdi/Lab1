@@ -10,7 +10,7 @@
     'lname' => $lname,
     'bday' => $bday,
     'sexe' => $sexe,
-    'login' => $login,
+    'login' => $username,
     'pwd' => $pwd,
     'email' => $email,
     'admin' => 0
