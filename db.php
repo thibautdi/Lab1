@@ -40,6 +40,17 @@ class Db {
     mysql_query("INSERT INTO clubs (name,address,logo,age,website,reviewed) VALUES ('$name','$address','$logo','$age','$website','$reviewed')");
   }
   
+  public function modify_user($id, $by, $value) {
+     self::connect();
+      mysql_query("SET NAMES UTF8"); 
+      mysql_select_db(self::$db['db']);      
+      $result = mysql_query("UPDATE users SET $by='$value' WHERE id = '$id'");
+      if (!$result) {
+         echo 'Impossible d\'exécuter la requête : ' . mysql_error();
+         exit;
+      }
+  }
+  
   public function remove_club($id) {
     $id = self::avoid_injection($id);
     self::connect();
