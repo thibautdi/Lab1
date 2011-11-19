@@ -233,6 +233,11 @@ input[type="submit"]
   display:inline-block;
 }
 
+label.error_pwd {
+  color:red;
+  font-decoration:italic;
+}
+
 #inscriptionForm label[for='condition'].error
 {
   margin-top:8px;
