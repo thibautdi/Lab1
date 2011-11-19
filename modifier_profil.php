@@ -4,7 +4,9 @@
     <h1>Modifier mon profil</h1>
     <p>Cliquez sur une catégorie ci dessous pour effectuer une modification</p>
     </br>
-    </br>
+    <?php if ($_GET['error'] == 'pwd') echo "<label class ='error_pwd'> Vous n'avez pas saisi correctement votre ancien mot de passe !</label>";?>
+    <?php if ($_GET['error'] == 's_pwd') echo "<label class='error_pwd'> Vous avez saisi deux nouveaux mots de passe différents !</label>";?>
+    
     <?php if (isset($_SESSION['user'])){ ?>
       <h3 onClick="show_div('changePwdDiv');">Changer mon mot de passe</h3>
       <div id='changePwdDiv'>
@@ -29,8 +31,8 @@
           </label>
           <input type='password' name='conf_pwd'/>
           </div>
-          
-          <input type='submit' value='Valider'>
+          <input type="hidden" name="user_id" value="<?php echo $_SESSION['user']['id'];?>"/>
+          <input type='submit' value='Valider'/>
            
         </form>
       </div>
