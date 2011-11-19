@@ -4,7 +4,7 @@
      <h1>Liste des clubs</h1>
      <div id='list_clubs'>
      <?php
-      $clubs = $db->get_all_clubs();
+      $clubs = $db->get_clubs(1);
       foreach ($clubs as $club) {
         ?>
         <a href="info_club.php?club_id=<?php echo $club['id']; ?>"><img src="<?php echo $club['logo']; ?>"/></a>

@@ -80,10 +80,10 @@ class Db {
     return $club;
   }
   
-  public function get_all_clubs() {
+  public function get_clubs($arg) {
     self::connect();
     mysql_select_db(self::$db['db']);
-    $query = "SELECT * FROM clubs";
+    $query = "SELECT * FROM clubs WHERE reviewed = '$arg'";
     $result = mysql_query($query);
     if (!$result) {
        echo 'Impossible d\'exécuter la requête : ' . mysql_error();
