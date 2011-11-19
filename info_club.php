@@ -67,12 +67,15 @@ $club_rated = $db->is_rated($_GET['club_id'],$_SESSION['user']['id']);
       </div>
       
         <?php if ($_SESSION['user']['admin'] == '1') { ?>
-          <div id='delete_club'>
-            <form id='styleForm' action='delete_club.php' method='post'>
+          <div id='manage_club'>
+            <form id='styleForm' action='manage_club.php' method='post' class='manage'>
             <input type='hidden' value= "<?php echo $_GET['club_id']; ?>" name='club_to_delete'>
               <input type='submit' value='Supprimer'>
+            <input type='hidden' value= "<?php echo $_GET['club_id']; ?>" name='club_to_validate'>
+                <input type='submit' value='Valider'>
             </form>
-          </div>   
+          </div>  
+          
         <?php } ?>
     </div>
   </div>
