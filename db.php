@@ -24,6 +24,7 @@ class Db {
   
   public function insert_user($user) {
     self::connect();
+    $user = self::avoid_injection($user);
     extract($user);
     mysql_query("SET NAMES UTF8"); 
     mysql_select_db(self::$db['db']);
@@ -33,6 +34,7 @@ class Db {
   
   public function insert_club($club) {
     self::connect();
+    $club = self::avoid_injection($club);
     extract($club);
     mysql_query("SET NAMES UTF8"); 
     mysql_select_db(self::$db['db']);
@@ -41,6 +43,7 @@ class Db {
   
   public function remove_club($id) {
     self::connect();
+    $id = self::avoid_injection($id);
     mysql_query("SET NAMES UTF8"); 
     mysql_select_db(self::$db['db']);
     $result = mysql_query("DELETE FROM clubs WHERE id = '$id'");
@@ -52,6 +55,8 @@ class Db {
   
   public function get_club($by, $value) {
     self::connect();
+    $by = self::avoid_injection($by);
+    $value = self::avoid_injection($value);    
     mysql_select_db(self::$db['db']);
     $query = "SELECT * FROM clubs WHERE ${by}='$value'";
     $result = mysql_query($query);
@@ -79,7 +84,9 @@ class Db {
   }
   
   public function select_user($by,$value) {
-    self::connect();
+    self::connect();  
+    $by = self::avoid_injection($by);
+    $value = self::avoid_injection($value);  
     mysql_select_db(self::$db['db']);
     $query = "SELECT * FROM users WHERE ${by}='$value'";
     $result = mysql_query($query);
@@ -97,7 +104,8 @@ class Db {
           foreach($res as $k => $v)
               $res[$k] = self::avoid_injection($v); //recursive
       elseif(is_string($res))
-          $res = mysql_real_escape_string($res);
+          $purifier = new HTMLPurifier(); 
+          $res = mysql_real_escape_string($purifier->purify($res));
       return $res;
   }
   

@@ -1,22 +1,12 @@
 <?php session_start(); ?>
 <?php
+require_once 'htmlpurifier/library/HTMLPurifier.auto.php';
+
 include 'config.php';
 include 'db.php'; 
 $db = new Db($config);
-  
-if (isset($_POST['login'])) {
-   $_SESSION['bla'] = 'bla';
-
-   $user = $db->select_user('login',$_POST['login']);
-
-   if ($user['pwd'] == $_POST['pwd']) {
-     $_SESSION['user'] = $user;
-   }
-   else {
-     echo 'FAIL';
-   }
-}
 ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
   <head>
@@ -32,7 +22,32 @@ if (isset($_POST['login'])) {
     <script type="text/javascript" src="scripts/messages_fr.js"></script>
     <script type="text/javascript" src="scripts/form.js"></script>
     <script type="text/javascript" src="scripts/ie.js"></script>
+    <script type="text/javascript" src="scripts/csspopup.js"></script>
   </head>
+  
+  <?php
+  
+  if (isset($_POST['login'])) {
+     $_SESSION['bla'] = 'bla';
+
+     $user = $db->select_user('login',$_POST['login']);
+
+     if ($user['pwd'] == $_POST['pwd']) {
+       $_SESSION['user'] = $user;
+     }
+     else {
+        ?>
+       	<div id="blanket" style="display:none;"></div>
+       	<div id="popUpDiv" style="display:none;">
+       	<a href="#" onclick="popup('popUpDiv')">Mauvais identifiants. </br> </br> Cliquez ici pour fermer</a>
+       	</div>	
+        <script>popup('popUpDiv');</script>
+       <?php
+     }
+  }
+?>
+  
+  
   <body>
     <div id="fb-root"></div>
     <script>(function(d, s, id) {
