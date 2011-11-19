@@ -1,7 +1,5 @@
 <?php session_start(); ?>
 <?php
-require_once 'htmlpurifier/library/HTMLPurifier.auto.php';
-
 include 'config.php';
 include 'db.php'; 
 $db = new Db($config);
@@ -22,10 +20,8 @@ $db = new Db($config);
     <script type="text/javascript" src="scripts/messages_fr.js"></script>
     <script type="text/javascript" src="scripts/form.js"></script>
     <script type="text/javascript" src="scripts/ie.js"></script>
-    <script type="text/javascript" src="scripts/location.js"></script>
     <script type="text/javascript" src="scripts/csspopup.js"></script>
   </head>
-  
   <?php
   
   if (isset($_POST['login'])) {

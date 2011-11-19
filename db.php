@@ -1,4 +1,5 @@
 <?php
+require_once 'htmlpurifier/library/HTMLPurifier.auto.php';
 
 class Db {
   private static $db;
