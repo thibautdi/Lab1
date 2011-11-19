@@ -157,6 +157,44 @@ class Db {
        exit;
     }
     return mysql_fetch_array($result);
-  } 
+  }
+  public function check_login($login) {
+     $login = self::avoid_injection($login);
+     $response = array();
+     self::connect();
+     mysql_select_db(self::$db['db']);
+     $select = "SELECT login FROM users WHERE login='$login'";
+     $result = mysql_query($select);
+     if (!$result) {
+        echo 'Impossible d\'exécuter la requête : ' . mysql_error();
+        exit;
+     }
+
+     if (strlen($login) < 5) {
+       $response = array(
+         "msg" => "<img src='img/no.png'/>Votre login doit faire au moins 5 caractères",
+         "ok" => "false" 
+       );
+     }
+     elseif (ereg("[^A-Za-z0-9]", $login)) {
+       $response = array(
+         "msg" => "<img src='img/no.png'/>Votre login ne doit contenir que des lettres et chiffres",
+         "ok" => "false"
+       );
+     }
+     elseif(mysql_num_rows($result)>=1) {
+       $response = array(
+         "msg" => "<img src='img/no.png'/>Ce login n'est pas disponible",
+         "ok" => "false" 
+       );
+     }
+     else {
+       $response = array(
+         "msg" => "<img src='img/tick.png'/>Ce login est disponible",
+         "ok" => "true" 
+       );
+     }
+     return $response;
+   } 
 }
 ?>
