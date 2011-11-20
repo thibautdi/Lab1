@@ -8,7 +8,11 @@ body {
 }
 
 #connection {
- color:white; 
+ color:black; 
+}
+
+#connection a{
+ color:black; 
 }
 
 #logo {

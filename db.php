@@ -72,7 +72,21 @@ class Db {
     $id = self::avoid_injection($id);
     mysql_query("SET NAMES UTF8"); 
     mysql_select_db(self::$db['db']);
-    $result = mysql_query("DELETE FROM clubs WHERE id = '$id'");
+    //$result = mysql_query("DELETE FROM clubs WHERE id = '$id'");
+    $result = mysql_query("CALL RemoveClub('$id')");
+    if (!$result) {
+       echo 'Impossible d\'exécuter la requête : ' . mysql_error();
+       exit;
+    }
+  }
+  
+  public function validate_club($id) {
+    self::connect();
+    $id = self::avoid_injection($id);
+    mysql_query("SET NAMES UTF8"); 
+    mysql_select_db(self::$db['db']);
+    //$result = mysql_query("UPDATE clubs SET reviewed = 1 WHERE id = '$id'");
+    $result = mysql_query("CALL ValidateClub('$id')");
     if (!$result) {
        echo 'Impossible d\'exécuter la requête : ' . mysql_error();
        exit;
@@ -102,7 +116,7 @@ class Db {
     $query = "SELECT * FROM clubs WHERE ${by}='$value'";
     $result = mysql_query($query);
     if (!$result) {
-       echo 'Impossible d\'exécuter la requête : ' . mysql_error();
+       echo 'Impossible d\'exécuter la requête get_club : ' . mysql_error();
        exit;
     }
     $club = mysql_fetch_array($result);    
@@ -141,17 +155,19 @@ class Db {
   
   public function select_user($by,$value) {
     self::connect();  
-    $by = self::avoid_injection($by);
-    $value = self::avoid_injection($value);  
-    mysql_select_db(self::$db['db']);
-    $query = "SELECT * FROM users WHERE ${by}='$value'";
-    $result = mysql_query($query);
-    if (!$result) {
-       echo 'Impossible d\'exécuter la requête : ' . mysql_error();
-       exit;
+    if($value!=''){    
+      $by = self::avoid_injection($by);
+      $value = self::avoid_injection($value);  
+      mysql_select_db(self::$db['db']);
+      $query = "SELECT * FROM users WHERE ${by}='$value'";
+      $result = mysql_query($query);
+      if (!$result) {
+         echo 'Impossible d\'exécuter la requête : ' . mysql_error();
+         exit;
+      }
+      $user = mysql_fetch_array($result);    
     }
-    $user = mysql_fetch_array($result);    
-    
+      elseif (!isset($_SESSION['user'])) echo 'Merci d\'indiquer un login et mot de passe';
     return $user;
   }
   
@@ -171,7 +187,7 @@ class Db {
     $query ="INSERT INTO ratings(user_id,club_id,rating,sexe) VALUES ('$user_id','$club_id','$rating','$sexe')";
     $result = mysql_query($query);
     if (!$result) {
-       echo 'Impossible d\'exécuter la requête : ' . mysql_error();
+       echo 'Impossible d\'exécuter la requête rate_club: ' . mysql_error();
        exit;
     }
     
@@ -191,18 +207,19 @@ class Db {
     }
   }
   
-  public function is_rated($club_id,$user_id) {
-    
+  public function is_rated($club_id,$user_id) { 
     self::connect();
     mysql_select_db(self::$db['db']);
     $select = "SELECT rating FROM ratings WHERE club_id='$club_id' AND user_id='$user_id'";
     $result = mysql_query($select);
     if (!$result) {
-       echo 'Impossible d\'exécuter la requête : ' . mysql_error();
+       echo 'Impossible d\'exécuter la requête is_rated : ' . mysql_error();
        exit;
     }
     return mysql_fetch_array($result);
   }
+  
+  
   public function check_login($login) {
      $login = self::avoid_injection($login);
      $response = array();

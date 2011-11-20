@@ -1,7 +1,32 @@
 <?php session_start();?>
 <?php include("header.php") ?>
 <?php include 'menu.php'; ?>
+
 <?php
+if ($_SESSION['user']['admin'] == '1') {
+  if (isset($_GET['delete_club'])) {
+    $db = new Db($config);
+    $db->remove_club($_GET['delete_club']);
+    //header('Location: success_delete_club.php'); ne marche pas car header deja set.  
+    echo '<script language="Javascript">
+    <!--
+    document.location.replace("success_delete_club.php");
+    // -->
+    </script>'; 
+  }
+
+  if (isset($_GET['validate_club'])) {
+    $db = new Db($config);
+    $db->validate_club($_GET['validate_club']);
+    // header('Location: mapage.php');  
+    echo '<script language="Javascript">
+    <!--
+    document.location.replace("success_validate_club.php");
+    // -->
+    </script>';
+  }
+}
+
 if (isset($_POST['hidden_rating'])) {
   if (isset($_SESSION['user']['id']))
   {
@@ -68,14 +93,9 @@ $club_rated = $db->is_rated($_GET['club_id'],$_SESSION['user']['id']);
       
         <?php if ($_SESSION['user']['admin'] == '1') { ?>
           <div id='manage_club'>
-            <form id='styleForm' action='manage_club.php' method='post' class='manage'>
-            <input type='hidden' value= "<?php echo $_GET['club_id']; ?>" name='club_to_delete'>
-              <input type='submit' value='Supprimer'>
-            <input type='hidden' value= "<?php echo $_GET['club_id']; ?>" name='club_to_validate'>
-                <input type='submit' value='Valider'>
-            </form>
-          </div>  
-          
+            <a href="info_club.php?delete_club=<?php echo $_GET['club_id']; ?>"><input type ='submit' value='Supprimer'></a>
+            <a href="info_club.php?validate_club=<?php echo $_GET['club_id']; ?>"><input type ='submit' value='Valider'></a>
+          </div>          
         <?php } ?>
     </div>
   </div>
