@@ -20,7 +20,6 @@ $db = new Db($config);
     <script type="text/javascript" src="scripts/messages_fr.js"></script>
     <script type="text/javascript" src="scripts/form.js"></script>
     <script type="text/javascript" src="scripts/ie.js"></script>
-    <script type="text/javascript" src="scripts/csspopup.js"></script>
   </head>
   <?php
   
@@ -33,13 +32,11 @@ $db = new Db($config);
        $_SESSION['user'] = $user;
      }
      else {
-        ?>
-       	<div id="blanket" style="display:none;"></div>
-       	<div id="popUpDiv" style="display:none;">
-       	<a href="#" onclick="popup('popUpDiv')">Mauvais identifiants. </br> </br> Cliquez ici pour fermer</a>
-       	</div>	
-        <script>popup('popUpDiv');</script>
-       <?php
+       echo '<script language="Javascript">
+       <!--
+       document.location.replace("error_login.php");
+       // -->
+       </script>'; 
      }
   }
 ?>

@@ -48,6 +48,7 @@
             <option value='black'>Noir</option>
             <option value='white'>Blanc</option>
           </select>
+          <input type="hidden" name="user_id" value="<?php echo $_SESSION['user']['id'];?>"/>
           <input type='submit' value='valider'>
         </form>
       </div>

@@ -155,17 +155,19 @@ class Db {
   
   public function select_user($by,$value) {
     self::connect();  
-    $by = self::avoid_injection($by);
-    $value = self::avoid_injection($value);  
-    mysql_select_db(self::$db['db']);
-    $query = "SELECT * FROM users WHERE ${by}='$value'";
-    $result = mysql_query($query);
-    if (!$result) {
-       echo 'Impossible d\'exécuter la requête : ' . mysql_error();
-       exit;
+    if($value!=''){    
+      $by = self::avoid_injection($by);
+      $value = self::avoid_injection($value);  
+      mysql_select_db(self::$db['db']);
+      $query = "SELECT * FROM users WHERE ${by}='$value'";
+      $result = mysql_query($query);
+      if (!$result) {
+         echo 'Impossible d\'exécuter la requête : ' . mysql_error();
+         exit;
+      }
+      $user = mysql_fetch_array($result);    
     }
-    $user = mysql_fetch_array($result);    
-    
+      elseif (!isset($_SESSION['user'])) echo 'Merci d\'indiquer un login et mot de passe';
     return $user;
   }
   
