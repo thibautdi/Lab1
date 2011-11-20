@@ -71,10 +71,10 @@ $db = new Db($config);
   	    </div>
   	    </div>  	    
   	    
-	  <?php } else { ?> <span style="color: white"> <?php
+	  <?php } else { ?>  <?php
 	    echo "Bonjour ".$_SESSION['user']['fname']." ".$_SESSION['user']['lname'];
 	    ?>
-	    <a href='logout.php'>Logout</a>
+	    <a href='logout.php'> - Déconnexion</a>
 	    <?php ?> </span> <?php } ?>
 	  </div>
 	</div>

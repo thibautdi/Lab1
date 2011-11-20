@@ -78,10 +78,12 @@ body
   min-height:700px;
   text-indent: justify;
   opacity: 0.85;
+  font-size: small;
 }
 
-#menu ul li a, #menu a:active, #menu ul li a:visited, #menu a:hover  {
-text-decoration: none;
+#menu ul li a {
+  text-decoration: none;
+  color: #000000;
 }
 
 #pub 
@@ -96,6 +98,14 @@ text-decoration: none;
   top: 1em;
   right: 2em;
   line-height: 60px;
+  color:white;
+}
+
+#connection a
+{
+  font-size:small;
+  text-decoration:none;
+  color:#FFFFFF;
 }
 
 #contenu

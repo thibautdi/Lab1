@@ -116,7 +116,7 @@ class Db {
     $query = "SELECT * FROM clubs WHERE ${by}='$value'";
     $result = mysql_query($query);
     if (!$result) {
-       echo 'Impossible d\'exécuter la requête : ' . mysql_error();
+       echo 'Impossible d\'exécuter la requête get_club : ' . mysql_error();
        exit;
     }
     $club = mysql_fetch_array($result);    
@@ -185,7 +185,7 @@ class Db {
     $query ="INSERT INTO ratings(user_id,club_id,rating,sexe) VALUES ('$user_id','$club_id','$rating','$sexe')";
     $result = mysql_query($query);
     if (!$result) {
-       echo 'Impossible d\'exécuter la requête : ' . mysql_error();
+       echo 'Impossible d\'exécuter la requête rate_club: ' . mysql_error();
        exit;
     }
     
@@ -209,9 +209,9 @@ class Db {
     self::connect();
     mysql_select_db(self::$db['db']);
     $select = "SELECT rating FROM ratings WHERE club_id='$club_id' AND user_id='$user_id'";
-    //$result = mysql_query("CALL ValidateClub('$club_id','$user_id')");
+    $result = mysql_query($select);
     if (!$result) {
-       echo 'Impossible d\'exécuter la requête : ' . mysql_error();
+       echo 'Impossible d\'exécuter la requête is_rated : ' . mysql_error();
        exit;
     }
     return mysql_fetch_array($result);

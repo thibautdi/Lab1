@@ -7,25 +7,23 @@ if ($_SESSION['user']['admin'] == '1') {
   if (isset($_GET['delete_club'])) {
     $db = new Db($config);
     $db->remove_club($_GET['delete_club']);
-?> 
-    <div id="blanket" style="display:none;"></div>
-   	<div id="popUpDiv" style="display:none;">
-   	<a href="clubs.php" onclick="popup('popUpDiv')">Club supprimé </br> </br> Cliquez ici pour fermer</a>
-   	</div>	
-    <script>popup('popUpDiv');</script>
-    <?php
+    //header('Location: success_delete_club.php'); ne marche pas car header deja set.  
+    echo '<script language="Javascript">
+    <!--
+    document.location.replace("success_delete_club.php");
+    // -->
+    </script>'; 
   }
 
   if (isset($_GET['validate_club'])) {
     $db = new Db($config);
     $db->validate_club($_GET['validate_club']);
-?>
-    <div id="blanket" style="display:none;"></div>
-   	<div id="popUpDiv" style="display:none;">
-   	<a href="clubs.php" onclick="popup('popUpDiv')">Club validé </br> </br> Cliquez ici pour fermer</a>
-   	</div>	
-    <script>popup('popUpDiv');</script>
-    <?php
+    // header('Location: mapage.php');  
+    echo '<script language="Javascript">
+    <!--
+    document.location.replace("success_validate_club.php");
+    // -->
+    </script>';
   }
 }
 
