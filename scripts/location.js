@@ -13,9 +13,9 @@ function success(position) {
   mapcanvas.id = 'mapcanvas';
   mapcanvas.style.height = '400px';
   mapcanvas.style.width = '560px';
-    
-  document.querySelector('article').appendChild(mapcanvas);
   
+  document.querySelector('article').appendChild(mapcanvas);
+  $("#position").html(position.coords.latitude+","+ position.coords.longitude);
   var latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
   var myOptions = {
     zoom: 15,
@@ -31,7 +31,17 @@ function success(position) {
       map: map, 
       title:"You are here!"
   });
-}
+  
+  $.ajax({
+    url: 'closest.php',
+    data: 'location=' + $("#position").html ,
+    dataType: 'json',
+    type: 'post',
+    success: function (j) {
+        $("#position").html(j);
+    }
+  });
+} 
 
 function error(msg) {
   var s = document.querySelector('#status');

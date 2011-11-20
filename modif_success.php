@@ -6,6 +6,8 @@ $db = new Db($config);
 
 if (isset($_POST['style_select'])) {
   setcookie('style', $_POST['style_select'], time() + 365*24*3600, null, null, false, true);
+  header("Location: modifier_profil.php");
+  exit;
 }
 $user = $db->select_user('id',$_POST['user_id']);
 if ($user['pwd'] != $_POST['old_pwd']) {
