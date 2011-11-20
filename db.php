@@ -57,7 +57,21 @@ class Db {
     $id = self::avoid_injection($id);
     mysql_query("SET NAMES UTF8"); 
     mysql_select_db(self::$db['db']);
-    $result = mysql_query("DELETE FROM clubs WHERE id = '$id'");
+    //$result = mysql_query("DELETE FROM clubs WHERE id = '$id'");
+    $result = mysql_query("CALL RemoveClub('$id')");
+    if (!$result) {
+       echo 'Impossible d\'exécuter la requête : ' . mysql_error();
+       exit;
+    }
+  }
+  
+  public function validate_club($id) {
+    self::connect();
+    $id = self::avoid_injection($id);
+    mysql_query("SET NAMES UTF8"); 
+    mysql_select_db(self::$db['db']);
+    //$result = mysql_query("UPDATE clubs SET reviewed = 1 WHERE id = '$id'");
+    $result = mysql_query("CALL ValidateClub('$id')");
     if (!$result) {
        echo 'Impossible d\'exécuter la requête : ' . mysql_error();
        exit;
@@ -146,18 +160,19 @@ class Db {
     }
   }
   
-  public function is_rated($club_id,$user_id) {
-    
+  public function is_rated($club_id,$user_id) { 
     self::connect();
     mysql_select_db(self::$db['db']);
     $select = "SELECT rating FROM ratings WHERE club_id='$club_id' AND user_id='$user_id'";
-    $result = mysql_query($select);
+    //$result = mysql_query("CALL ValidateClub('$club_id','$user_id')");
     if (!$result) {
        echo 'Impossible d\'exécuter la requête : ' . mysql_error();
        exit;
     }
     return mysql_fetch_array($result);
   }
+  
+  
   public function check_login($login) {
      $login = self::avoid_injection($login);
      $response = array();
