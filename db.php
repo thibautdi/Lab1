@@ -42,14 +42,29 @@ class Db {
   }
   
   public function modify_user($id, $by, $value) {
-     self::connect();
-      mysql_query("SET NAMES UTF8"); 
-      mysql_select_db(self::$db['db']);      
-      $result = mysql_query("UPDATE users SET $by='$value' WHERE id = '$id'");
+    self::connect();
+    mysql_query("SET NAMES UTF8"); 
+    mysql_select_db(self::$db['db']);      
+    $result = mysql_query("UPDATE users SET $by='$value' WHERE id = '$id'");
       if (!$result) {
-         echo 'Impossible d\'exécuter la requête : ' . mysql_error();
-         exit;
+        echo 'Impossible d\'exécuter la requête : ' . mysql_error();
+        exit;
       }
+    if ($by == 'admin') {
+      if ($value == '1') {
+        $response = array(
+          "msg" => "<label class='success'><img src='img/tick.png'/>Privilèges ajoutés</label>",
+          "ok" => "true" 
+        );
+      } 
+      elseif ($value == '0') {
+        $response = array(
+          "msg" => "<label class='success'><img src='img/tick.png'/>Privilèges retirés</label>",
+          "ok" => "true"
+        );
+      }
+    }
+    return $response;
   }
   
   public function remove_club($id) {
@@ -76,6 +91,21 @@ class Db {
        echo 'Impossible d\'exécuter la requête : ' . mysql_error();
        exit;
     }
+  }
+  
+  public function delete_user($id) {
+    self::connect();
+    $id = self::avoid_injection($id);
+    mysql_select_db(self::$db['db']);
+    $result = mysql_query("DELETE FROM users WHERE id = '$id'");
+    if (!$result) {
+       echo 'Impossible d\'exécuter la requête : ' . mysql_error();
+       exit;
+    }
+    $response = array(
+      "ok" => "true"
+    );  
+    return $response;
   }
   
   public function get_club($by, $value) {
@@ -106,6 +136,21 @@ class Db {
       $clubs[] = $club;
     }    
     return $clubs;
+  }
+  
+  public function get_users() {
+    self::connect();
+    mysql_select_db(self::$db['db']);
+    $query = "SELECT * FROM users";
+    $result = mysql_query($query);
+    if (!$result) {
+       echo 'Impossible d\'exécuter la requête : ' . mysql_error();
+       exit;
+    }
+    while ($user = mysql_fetch_array($result)) {
+      $users[] = $user;
+    }    
+    return $users;
   }
   
   public function select_user($by,$value) {

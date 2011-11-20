@@ -90,6 +90,62 @@ $(document).ready(function(){
 		}
 	  });
 	  
+	  $('.make_admin').live('click', function(){
+  	    $("label.success").remove();
+  	    var t = this; 
+        $.ajax({
+          url: 'update_user.php',
+          data: 'id=' + t.id + '&action=make_admin',
+          dataType: 'json',
+          type: 'post',
+          success: function (j) {
+            if (j.ok == 'true') {
+              t.value = 'Retirer privilèges';
+              $("#"+t.id).attr('class', 'remove_admin');
+              $(t).after(j.msg);
+            }
+          }
+        });
+  	  });
+  	  
+  	  $('.remove_admin').live('click', function(){
+    	    $("label.success").remove();
+    	    var t = this; 
+    		  $.ajax({
+            url: 'update_user.php',
+            data: 'id=' + t.id + '&action=remove_admin',
+            dataType: 'json',
+            type: 'post',
+            success: function (j) {
+              if (j.ok == 'true') {
+                t.value = 'Nommer admin';
+                $("#"+t.id).attr('class', 'make_admin');
+                $(t).after(j.msg);
+              }
+            }
+          });
+    	  });
+    	  
+    	  $('.delete_user').live('click', function(){
+        	$("label.success").remove();
+    	      var t = this; 
+      	    var ids = t.id.split('_');
+      	    var id = ids[1];
+      		  $.ajax({
+		          url: 'update_user.php',
+		          data: 'id=' + id + '&action=delete_user',
+		          dataType: 'json',
+		          type: 'post',
+		          success: function (j) {
+		            if (j.ok == 'true') {
+		              $("#user_"+id).remove();
+		            }
+		          }
+		        });
+    		  });
+      		      
+        		        
+	  
    $("#club_rating").bind({
      mouseenter: function(e){
       if ($('#already_rated').val() != "yes") {
