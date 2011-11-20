@@ -15,8 +15,11 @@
 
     <?php   
   } 
-  
-  ?>
+  if ($_SESSION['user']['admin'] == '1') { ?>  
+    <li><a href="manage_users.php">Gérer les utilisateurs</a></li>
+
+    <?php   
+  } ?>
     <li><a href="contact.php">Nous contacter</a></li>
     </ul> 
 
