@@ -8,7 +8,7 @@ include 'menu.php';
   <script type="text/javascript" src="scripts/location.js"></script>
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
   <article>
-    <p>Géolocalisation en cours: <span id="status">...</span></p>
+    <p>Géolocalisation en cours: (fonctionne avec chrome et firefox)<span id="status">...</span></p>
       <div id='top_0' class='closest'></div>
       <div id='top_1' class='closest'></div>
       <div id='top_2' class='closest'></div>
