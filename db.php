@@ -38,7 +38,7 @@ class Db {
     extract($club);
     mysql_query("SET NAMES UTF8"); 
     mysql_select_db(self::$db['db']);
-    mysql_query("INSERT INTO clubs (name,address,logo,age,website,reviewed) VALUES ('$name','$address','$logo','$age','$website','$reviewed')");
+    mysql_query("INSERT INTO clubs (name,address,logo,age,website,reviewed) VALUES ('$name','$address','$logo','$age','$website',0)");
   }
   
   public function modify_user($id, $by, $value) {
@@ -220,9 +220,9 @@ class Db {
   
   
   public function check_login($login) {
+     self::connect();
      $login = self::avoid_injection($login);
      $response = array();
-     self::connect();
      mysql_select_db(self::$db['db']);
      $select = "SELECT login FROM users WHERE login='$login'";
      $result = mysql_query($select);

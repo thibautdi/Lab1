@@ -72,7 +72,7 @@ $(document).ready(function(){
 		          url: 'check_login.php',
 		          data: 'username=' + t.value,
 		          dataType: 'json',
-		          type: 'post',
+		          type: 'POST',
 		          success: function (j) {
 		            validateUsername.html(j.msg);
 		            if (j.ok == 'true') {
@@ -102,7 +102,7 @@ $(document).ready(function(){
             if (j.ok == 'true') {
               t.value = 'Retirer privilèges';
               $("#"+t.id).attr('class', 'remove_admin');
-              $(t).after(j.msg);
+              $("#delete_"+t.id).after(j.msg);
             }
           }
         });
@@ -120,7 +120,7 @@ $(document).ready(function(){
               if (j.ok == 'true') {
                 t.value = 'Nommer admin';
                 $("#"+t.id).attr('class', 'make_admin');
-                $(t).after(j.msg);
+                $("#delete_"+t.id).after(j.msg);
               }
             }
           });
