@@ -21,9 +21,15 @@ function find_closest_club($origin,$config) {
   $addresses[0] = "";
   $i = 0;
   $j = 0;
-  $max_address = 10;
+  $max_address = 30;
   foreach ($clubs as $club) {
     if ($i < $max_address) {
+      $index_clubs[$j][$i] = $club['id'];
+      $addresses[$j] .=  "|".$club['address']." Montreal";
+    }
+    else {
+      $i = 0;
+      $j++; 
       $index_clubs[$j][$i] = $club['id'];
       $addresses[$j] .=  "|".$club['address']." Montreal";
     }
@@ -63,7 +69,7 @@ $urls[]="http://maps.googleapis.com/maps/api/distancematrix/xml?origins=".$origi
 }
 
 
-$to_return = find_closest_club($_REQUEST['location'],$config);
+$to_return = find_closest_club("45.5348616,-73.6027071",$config);
 if (!$to_return) {
   echo json_encode(array("status"=>"ko"));
   exit;
