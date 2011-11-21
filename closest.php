@@ -21,14 +21,9 @@ function find_closest_club($origin,$config) {
   $addresses[0] = "";
   $i = 0;
   $j = 0;
-  $max_address = 30;
+  $max_address = 10;
   foreach ($clubs as $club) {
     if ($i < $max_address) {
-      $index_clubs[$j][$i] = $club['id'];
-      $addresses[$j] .=  "|".$club['address']." Montreal";
-    }else {
-      $i = 0;
-      $j++; 
       $index_clubs[$j][$i] = $club['id'];
       $addresses[$j] .=  "|".$club['address']." Montreal";
     }
@@ -47,14 +42,13 @@ $urls[]="http://maps.googleapis.com/maps/api/distancematrix/xml?origins=".$origi
     $j = 0;
     foreach ($xml->row->element as $element) {  
       
-      $clubs[$j + $max_address * $k]['distance_data'] = $element->distance->text;
+      $clubs[$j + $max_address * $k]['distance_data'] = $element;
       $to_sort[$clubs[$j + $max_address * $k]['id']] = strval($element->distance->value);
       if ($j == 0 || strval($element->distance->value) < $min_distance) {
         $closest = $element;
         $min_distance = $element->distance->value;
         $min_index = $j;
         $min_url = $k;
-        //$distances[$k][$j] = array ("distance" => $element->distance->value, "",$k);
       }
       $j++;
     }
@@ -71,10 +65,9 @@ $urls[]="http://maps.googleapis.com/maps/api/distancematrix/xml?origins=".$origi
 
 $to_return = find_closest_club($_REQUEST['location'],$config);
 if (!$to_return) {
-  echo json_encode("Trop de Query à Google");
+  echo json_encode(array("status"=>"ko"));
   exit;
 }
-echo json_encode($to_return);
+echo json_encode(array("status"=>"ok","response"=>$to_return));
 exit;
 //echo $xml->destination_address[0];
-//var_dump($addresses);
