@@ -6,7 +6,8 @@
 
       $temp_image = 'club_images/temp.'.$ext;
       move_uploaded_file($_FILES['logo']['tmp_name'],$temp_image);
-      $link = 'club_images/'.$_POST['name'].".".$ext;
+      //$link = 'club_images/'.$_POST['name'].".".$ext;
+      $link = 'club_images/'."default.jpg";
       rename($temp_image,$link);
 
       $db = new Db($config);
@@ -16,6 +17,7 @@
         'address' => $_POST['address'],
         'logo' => $link,
         'age' => $_POST['age'],
+        'website' => $_POST['website'],
         'reviewed' => 0
         );  
         

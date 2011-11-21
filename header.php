@@ -23,9 +23,10 @@ $db = new Db($config);
   </head>
   <?php
   
+  
   if (isset($_POST['login'])) {
      $_SESSION['bla'] = 'bla';
-
+     
      $user = $db->select_user('login',$_POST['login']);
 
      if ($user['pwd'] == $_POST['pwd']) {
