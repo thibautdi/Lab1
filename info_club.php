@@ -92,7 +92,7 @@ $club_rated = $db->is_rated($_GET['club_id'],$_SESSION['user']['id']);
       </form> 
       </div>
       <div id='club_comments'>
-        <div class="fb-comments" data-href="localhost/lab1/info_club.php?club_id=<?php echo $club['id'];?>" data-num-posts="5" data-width="500"></div>
+        <div class="fb-comments" data-href="www.info.polymtl.ca/~grboi/Lab1/info_club.php?club_id=<?php echo $club['id'];?>" data-num-posts="5" data-width="500"></div>
       </div>
         
     </div>
