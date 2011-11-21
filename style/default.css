@@ -5,6 +5,11 @@ p
   font-size: small;
 }
 
+html
+{
+  height: 100%;
+}
+
 body 
 {
 	text-align: justify;
@@ -16,6 +21,8 @@ body
   background-image: url(../img/back.jpg);
   background-repeat:no-repeat;
   background-attachment:fixed;
+  position: relative;
+  height: 100%;
 } 
 
 #header
@@ -34,9 +41,10 @@ body
 }
 
 #main {
-  margin:0 auto;
   width:1024px;
-  min-height:1500px;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
 }
 
 #footer {
@@ -44,7 +52,14 @@ body
   text-decoration: italic;
   font-size:9px;
   color:white;
+  position: fixed;
+  bottom:0%;
+  width:100%;
+  opacity: 0.85;  
+  background-color: #FFFFFF;
+  color:black;
 }
+
 
 #logo 
 {
@@ -75,7 +90,7 @@ body
   background-color: #FFFFFF;
   margin-right:56px;
   padding-left:15px;
-  min-height:1500px;
+  min-height:700px;
   text-indent: justify;
   opacity: 0.85;
   font-size: small;
@@ -90,7 +105,7 @@ body
 #pub 
 {
   padding-left:30px;
-  min-height:1500px;
+  min-height:700px;
 }
 
 #connection
@@ -120,9 +135,10 @@ body
   border-right:1px solid #B3B3B3;
   padding-right:30px;
   padding-left:30px;
-  min-height:1500px;
   text-indent: justify;
-  opacity: 0.95;
+  opacity: 0.85;
+  min-height:700px;
+  margin-bottom:100px;
 }
 
 #inscriptionForm {
