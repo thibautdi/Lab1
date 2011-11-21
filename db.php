@@ -167,7 +167,6 @@ class Db {
       }
       $user = mysql_fetch_array($result);    
     }
-      elseif (!isset($_SESSION['user'])) echo 'Merci d\'indiquer un login et mot de passe';
     return $user;
   }
   
