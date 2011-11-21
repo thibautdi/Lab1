@@ -7,7 +7,6 @@ if ($_SESSION['user']['admin'] == '1') {
   if (isset($_GET['delete_club'])) {
     $db = new Db($config);
     $db->remove_club($_GET['delete_club']);
-    //header('Location: success_delete_club.php'); ne marche pas car header deja set.  
     echo '<script language="Javascript">
     <!--
     document.location.replace("success_delete_club.php");
@@ -18,7 +17,6 @@ if ($_SESSION['user']['admin'] == '1') {
   if (isset($_GET['validate_club'])) {
     $db = new Db($config);
     $db->validate_club($_GET['validate_club']);
-    // header('Location: mapage.php');  
     echo '<script language="Javascript">
     <!--
     document.location.replace("success_validate_club.php");
@@ -43,7 +41,13 @@ $club_rated = $db->is_rated($_GET['club_id'],$_SESSION['user']['id']);
         <span class='club_name'><?php echo $club['name'];?></span>
         <div id='club_logo'>
           <img src="<?php echo $club['logo']?>"/>
-        </div>
+        </div>  
+        <?php if ($_SESSION['user']['admin'] == '1') { ?>
+          <div id='manage_club'>
+            <a href="info_club.php?delete_club=<?php echo $_GET['club_id']; ?>&club_id=<?php echo $_GET['club_id']; ?>"><input type ='submit' value='Supprimer'></a>
+            <a href="info_club.php?validate_club=<?php echo $_GET['club_id']; ?>&club_id=<?php echo $_GET['club_id']; ?>"><input type ='submit' value='Valider'></a>
+          </div>          
+        <?php } ?>
         <?php if ($club['website'] != ''): ?>
         <div id='club_website'>
           <div class='club_title'>Website:</div>
@@ -90,13 +94,7 @@ $club_rated = $db->is_rated($_GET['club_id'],$_SESSION['user']['id']);
       <div id='club_comments'>
         <div class="fb-comments" data-href="www.info.polymtl.ca/~grboi/Lab1/info_club.php?club_id=<?php echo $club['id'];?>" data-num-posts="5" data-width="500"></div>
       </div>
-      
-        <?php if ($_SESSION['user']['admin'] == '1') { ?>
-          <div id='manage_club'>
-            <a href="info_club.php?delete_club=<?php echo $_GET['club_id']; ?>"><input type ='submit' value='Supprimer'></a>
-            <a href="info_club.php?validate_club=<?php echo $_GET['club_id']; ?>"><input type ='submit' value='Valider'></a>
-          </div>          
-        <?php } ?>
+        
     </div>
   </div>
 
