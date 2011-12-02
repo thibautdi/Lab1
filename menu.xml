@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<menu>
+  <item>
+    <title>Accueil</title>
+    <link>index.php</link>
+  </item>
+  
+  <item>
+    <title>Les lieux</title>
+    <link>clubs.php</link>
+  </item>
+  
+  <item>
+    <title>Clubs les plus proches</title>
+    <link>location.php</link>
+  </item>
+  
+  <item_user>
+    <title>Ajouter un lieu</title>
+    <link>add_club.php</link>
+  </item_user>
+  
+  <item_user>
+    <title>Gérer mon compte</title>
+    <link>modifier_profil.php</link>
+  </item_user>
+  
+  <item_admin>
+    <title>Valider les nouveaux clubs</title>
+    <link>validate_club.php</link>
+  </item_admin>
+  
+  <item_admin>
+    <title>Gérer les utilisateurs</title>
+    <link>manage_users.php</link>
+  </item_admin>
+  
+  <item>
+    <title>Nous contacter</title>
+    <link>contact.php</link>
+  </item>
+</menu>

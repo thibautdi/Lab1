@@ -1,4 +1,4 @@
-<div id="menu">
+ <div id="menu">
    <ul>
       <li><a href="index.php">Accueil</a></li>
       <li><a href="clubs.php">Les lieux</a></li>
@@ -22,5 +22,15 @@
   } ?>
     <li><a href="contact.php">Nous contacter</a></li>
     </ul> 
+
+    <?php
+      $xslDoc = new DOMDocument();
+      $xslDoc->load("menu.xsl");
+      $xmlDoc = new DOMDocument();
+      $xmlDoc->load("menu.xml");
+      $proc = new XSLTProcessor();
+      $proc->importStylesheet($xslDoc);
+      echo $proc->transformToXML($xmlDoc);
+    ?>
 
  </div>
