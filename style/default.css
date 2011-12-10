@@ -88,11 +88,22 @@ body
   float: left; 
   width: 170px; 
   background-color: #FFFFFF;
-  margin-right:56px;
+  margin-right:20px;
   padding-left:15px;
   min-height:700px;
   text-indent: justify;
   opacity: 0.85;
+  font-size: small;
+  line-height:400%;
+}
+
+#droite {
+  float:right;
+  width: 180px; 
+  background-color: #FFFFFF;
+  padding-left:15px;
+  min-height:700px;
+  text-indent: justify;
   font-size: small;
   line-height:400%;
 }
@@ -231,7 +242,7 @@ ul
   float:right;
   clear:right;
   width:-1px;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 input[type="submit"]
@@ -452,4 +463,49 @@ label.success {
 #top_0 {
   font-size:16px;
   margin-top:15px;
+}
+
+.tweet {
+  font-size: 8px;
+  line-height: 12px;
+  padding: 7px;
+  border: 1px solid #ddd;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  opacity: 1;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  float:left;
+}
+
+#rss_title {
+  font-size:15px;
+  border-bottom:1px solid #DDD;
+  font-weight:bold;
+  line-height:310%;
+}
+
+.tweet_author {
+  font-size: 10px;
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+
+.tweet_date {
+  float: right;
+  margin-top: 5px;
+  font-style:italic;
+}
+
+.tweet a:visited {
+  color:black;
+  text-decoration:none;
+}
+
+.tweet a {
+  color:black;
+  text-decoration:none;
+  
 }

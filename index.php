@@ -18,5 +18,5 @@
     </li>
   </ul>
 </div>
-<?php include 'sidebar.php';?>
+<?php include 'rss.php';?>
 <?php include 'footer.php';?>
